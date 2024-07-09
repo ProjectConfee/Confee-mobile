@@ -1,3 +1,5 @@
+// home_page.dart
+
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
@@ -9,7 +11,7 @@ import 'package:youtube_1/pages/participant/innovation/description_page.dart'; /
 import 'package:youtube_1/pages/participant/innovation/stall_map_page.dart'; // Import StallMapPage
 import 'package:youtube_1/pages/participant/innovation/stall_checked.dart'; // Import StallCheckedPage
 import 'package:youtube_1/pages/participant/innovation/notification.dart'; // Import NotificationPage
-//import 'package:youtube_1/pages/qrscan.dart'; // Import QRScanPage
+import 'package:youtube_1/pages/participant/innovation/qrscan_page.dart'; // Import QRScanPage
 import 'package:youtube_1/pages/participant/innovation/competition.dart'; // Import CompetitionPage
 
 class HomePage extends StatefulWidget {
@@ -62,12 +64,12 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // void _navigateToQRScanPage(BuildContext context) {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(builder: (context) => QRScanPage()),
-  //   );
-  // }
+  void _navigateToQRScanPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => QRScanPage()),
+    );
+  }
 
   void _navigateToCompetitionPage(BuildContext context) {
     Navigator.push(
@@ -238,7 +240,23 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       // QR Scan
-                      
+                      // GestureDetector(
+                      //   onTap: () {
+                      //     _navigateToQRScanPage(context); // Navigate to QRScanPage
+                      //   },
+                      //   child: Column(
+                      //     children: [
+                      //       EmoticonFace(
+                      //         icon: Icons.qr_code, // QR code icon
+                      //       ),
+                      //       SizedBox(height: 8),
+                      //       Text(
+                      //         'QR Scan',
+                      //         style: TextStyle(color: Colors.white),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
                     ],
                   ),
                   SizedBox(height: 25),
@@ -286,14 +304,14 @@ class _HomePageState extends State<HomePage> {
                             
                             onTap: () => _navigateToStallCheckedPage(context), // Navigate to StallCheckedPage
                           ),
-                          // ExerciseTile(
-                          //   icon: Icons.qr_code,
-                          //   exerciseName: 'Scan QR Code',
+                          ExerciseTile(
+                            icon: Icons.qr_code,
+                            exerciseName: 'Scan QR Code',
                            
-                          //   onTap: () {
-                          //     _navigateToQRScanPage(context); // Navigate to QRScanPage on QR code tile tap
-                          //   },
-                          // ),
+                            onTap: () {
+                              _navigateToQRScanPage(context); // Navigate to QRScanPage on QR code tile tap
+                            },
+                          ),
                         ],
                       ),
                     ),
