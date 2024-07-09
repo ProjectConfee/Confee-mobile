@@ -1,19 +1,22 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:youtube_1/pages/home_page.dart'; // Import the HomePage
-import 'package:youtube_1/pages/image_page.dart';
-import 'package:youtube_1/pages/participant/innovation/util/util/exercise_tile2.dart';
+import 'package:youtube_1/pages/participant/innovation/home_page.dart'; // Import the HomePage
+import 'package:youtube_1/pages/participant/innovation/util/exercise_tile4.dart';
 
-class ResourceCategoryPage extends StatelessWidget {
-  const ResourceCategoryPage({super.key});
-
+class ImagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Resource Category'),
-        backgroundColor: Colors.blue[800], // Set the app bar color
+        title: Text('Images'),
+        backgroundColor: Colors.blue[800],
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       backgroundColor: Colors.blue[800],
       bottomNavigationBar: BottomNavigationBar(
@@ -24,7 +27,6 @@ class ResourceCategoryPage extends StatelessWidget {
         ],
         onTap: (index) {
           if (index == 0) {
-            // Navigate to the HomePage when the home icon is tapped
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(builder: (context) => HomePage()),
@@ -40,7 +42,7 @@ class ResourceCategoryPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 children: [
-                  // Greeting row (if needed)
+                  // Greeting row
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -48,32 +50,38 @@ class ResourceCategoryPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [],
                       ),
+                      // Notification
+                      /*Container(
+                        decoration: BoxDecoration(
+                          color: Colors.blue[600],
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        padding: EdgeInsets.all(12),
+                        child: Icon(
+                          Icons.notifications,
+                          color: Colors.white,
+                        ),
+                      ),*/
                     ],
                   ),
-                  SizedBox(height:0),
+                  SizedBox(height: 0),
                   // Search bar
                   Container(
-                    padding: EdgeInsets.all(0),
+                    padding: EdgeInsets.all(12),
                     child: Row(
                       children: [
-                       
-                        SizedBox(width: 49),
-                        Text(
-                          'COMPANY 01',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
+                        
+                        
                       ],
                     ),
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: 11),
+                  // How do you feel?
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [],
                   ),
+                  // Four different faces
                 ],
               ),
             ),
@@ -83,43 +91,40 @@ class ResourceCategoryPage extends StatelessWidget {
                 color: Colors.grey[300],
                 child: Column(
                   children: [
+                    // Exercise heading
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [],
                     ),
                     SizedBox(height: 20),
+                    // List of exercises
                     Expanded(
                       child: ListView(
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ImagePage(),
-                                ),
-                              );
-                            },
-                            child: ExerciseTile(
-                              imagePath: 'asset/images/file-image-fill.png',
-                              companyName: 'Images',
-                            ),
+                          ExerciseTile(
+                            imagePath: 'asset/images/download.png',
+                            //companyName: 'Documents',
+                            //description: 'Leading company of SL',
                           ),
                           ExerciseTile(
-                            imagePath: 'asset/images/article-line.png',
-                            companyName: 'Documents',
+                            imagePath: 'asset/images/v.png',
+                           // companyName: 'Videos',
+                            //description: 'Now we are open for You',
                           ),
                           ExerciseTile(
-                            imagePath: 'asset/images/file-video-fill.png',
-                            companyName: 'Videos',
+                            imagePath: 'asset/images/vv.png',
+                            //companyName: 'Images',
+                            //description: 'World famous company',
                           ),
                           ExerciseTile(
-                            imagePath: 'asset/images/links-line.png',
-                            companyName: 'Links',
+                            imagePath: 'asset/images/R.png',
+                            //companyName: 'Links',
+                            //description: 'For YOU',
                           ),
                           ExerciseTile(
-                            imagePath: 'asset/images/color-filter-fill.png',
-                            companyName: 'Others',
+                            imagePath: 'asset/images/download.png',
+                            //companyName: 'Others',
+                            //description: 'Happy coding',
                           ),
                         ],
                       ),

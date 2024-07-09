@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:youtube_1/pages/home_page.dart'; // Import HomePage for navigation
-import 'package:youtube_1/pages/profile_view.dart'; // Import ProfilePage for navigation
+import 'package:youtube_1/pages/participant/innovation/home_page.dart'; // Import HomePage for navigation
+import 'package:youtube_1/pages/participant/innovation/profile_view.dart'; // Import ProfilePage for navigation
 
 class StallCheckedPage extends StatelessWidget {
   const StallCheckedPage({Key? key}) : super(key: key);

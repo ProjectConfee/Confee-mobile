@@ -1,16 +1,16 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:youtube_1/pages/participant/innovation/util/util/emoticon_face.dart';
-import 'package:youtube_1/pages/participant/innovation/util/util/exercise_tile.dart';
-import 'package:youtube_1/pages/resourceview_page.dart'; // Import ResourcePage
-import 'package:youtube_1/pages/profile_view.dart'; // Import ProfileViewPage
-import 'package:youtube_1/pages/description_page.dart'; // Import DescriptionPage
-import 'package:youtube_1/pages/stall_map_page.dart'; // Import StallMapPage
-import 'package:youtube_1/pages/stall_checked.dart'; // Import StallCheckedPage
-import 'package:youtube_1/pages/notification.dart'; // Import NotificationPage
+import 'package:youtube_1/pages/participant/innovation/util/emoticon_face.dart';
+import 'package:youtube_1/pages/participant/innovation/util/exercise_tile.dart';
+import 'package:youtube_1/pages/participant/innovation/resourceview_page.dart'; // Import ResourcePage
+import 'package:youtube_1/pages/participant/innovation/profile_view.dart'; // Import ProfileViewPage
+import 'package:youtube_1/pages/participant/innovation/description_page.dart'; // Import DescriptionPage
+import 'package:youtube_1/pages/participant/innovation/stall_map_page.dart'; // Import StallMapPage
+import 'package:youtube_1/pages/participant/innovation/stall_checked.dart'; // Import StallCheckedPage
+import 'package:youtube_1/pages/participant/innovation/notification.dart'; // Import NotificationPage
 //import 'package:youtube_1/pages/qrscan.dart'; // Import QRScanPage
-import 'package:youtube_1/pages/competition.dart'; // Import CompetitionPage
+import 'package:youtube_1/pages/participant/innovation/competition.dart'; // Import CompetitionPage
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
