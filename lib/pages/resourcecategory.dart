@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_1/pages/home_page.dart'; // Import the HomePage
 import 'package:youtube_1/pages/image_page.dart';
-import 'package:youtube_1/util/exercise_tile2.dart';
+import 'package:youtube_1/pages/participant/innovation/util/util/exercise_tile2.dart';
 
 class ResourceCategoryPage extends StatelessWidget {
   const ResourceCategoryPage({super.key});

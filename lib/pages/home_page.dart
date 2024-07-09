@@ -1,15 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:youtube_1/util/emoticon_face.dart';
-import 'package:youtube_1/util/exercise_tile.dart';
+import 'package:youtube_1/pages/participant/innovation/util/util/emoticon_face.dart';
+import 'package:youtube_1/pages/participant/innovation/util/util/exercise_tile.dart';
 import 'package:youtube_1/pages/resourceview_page.dart'; // Import ResourcePage
 import 'package:youtube_1/pages/profile_view.dart'; // Import ProfileViewPage
 import 'package:youtube_1/pages/description_page.dart'; // Import DescriptionPage
 import 'package:youtube_1/pages/stall_map_page.dart'; // Import StallMapPage
 import 'package:youtube_1/pages/stall_checked.dart'; // Import StallCheckedPage
 import 'package:youtube_1/pages/notification.dart'; // Import NotificationPage
-import 'package:youtube_1/pages/qrscan.dart'; // Import QRScanPage
+//import 'package:youtube_1/pages/qrscan.dart'; // Import QRScanPage
 import 'package:youtube_1/pages/competition.dart'; // Import CompetitionPage
 
 class HomePage extends StatefulWidget {
@@ -62,12 +62,12 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _navigateToQRScanPage(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => QRScanPage()),
-    );
-  }
+  // void _navigateToQRScanPage(BuildContext context) {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => QRScanPage()),
+  //   );
+  // }
 
   void _navigateToCompetitionPage(BuildContext context) {
     Navigator.push(
@@ -286,14 +286,14 @@ class _HomePageState extends State<HomePage> {
                             
                             onTap: () => _navigateToStallCheckedPage(context), // Navigate to StallCheckedPage
                           ),
-                          ExerciseTile(
-                            icon: Icons.qr_code,
-                            exerciseName: 'Scan QR Code',
+                          // ExerciseTile(
+                          //   icon: Icons.qr_code,
+                          //   exerciseName: 'Scan QR Code',
                            
-                            onTap: () {
-                              _navigateToQRScanPage(context); // Navigate to QRScanPage on QR code tile tap
-                            },
-                          ),
+                          //   onTap: () {
+                          //     _navigateToQRScanPage(context); // Navigate to QRScanPage on QR code tile tap
+                          //   },
+                          // ),
                         ],
                       ),
                     ),

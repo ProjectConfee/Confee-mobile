@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:youtube_1/pages/home_page.dart'; // Import the HomePage
-import 'package:youtube_1/util/exercise_tile4.dart';
+import 'package:youtube_1/pages/participant/innovation/util/util/exercise_tile4.dart';
 
 class ImagePage extends StatelessWidget {
   @override
