@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:youtube_1/util/exercise_tile3.dart';
 import 'package:youtube_1/pages/resourcecategory.dart';  // Import the ResourceCategoryPage

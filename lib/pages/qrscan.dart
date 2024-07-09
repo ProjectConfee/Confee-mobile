@@ -1,74 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_1/pages/home_page.dart';
-import 'package:youtube_1/pages/profile_view.dart';  // Import your home page to enable navigation back
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 
-class QRScanPage extends StatelessWidget {
+class QRScanPage extends StatefulWidget {
   const QRScanPage({Key? key}) : super(key: key);
+
+  @override
+  State<QRScanPage> createState() => _QRScanPageState();
+}
+
+class _QRScanPageState extends State<QRScanPage> {
+  late QRViewController controller;
+  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('QR Scan'),
-        backgroundColor: Colors.blue[800], // Set app bar color
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context); // Navigate back when arrow back is pressed
-          },
-        ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.qr_code_scanner,
-              size: 120,
-              color: Colors.blue[800],
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: QRView(
+              key: qrKey,
+              onQRViewCreated: _onQRViewCreated,
             ),
-            SizedBox(height: 20),
-            Text(
-              'Scan QR Code',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                // Implement QR scanning logic here
-                // Example: Navigator.pop(context);
-              },
-              child: Text('Start Scan'),
-            ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag),
-            label: 'Packages',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Profile',
+          ElevatedButton(
+            onPressed: () {
+              // Perform action on scan result if needed
+            },
+            child: Text('Start Scan'),
           ),
         ],
-        onTap: (index) {
-          if (index == 0) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomePage()),
-            );
-          } else if (index == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ProfileViewPage()),
-            );
-          }
-        },
       ),
     );
+  }
+
+  void _onQRViewCreated(QRViewController controller) {
+    setState(() {
+      this.controller = controller;
+    });
+
+    controller.scannedDataStream.listen((scanData) {
+      // Handle scanned data here
+      print(scanData.code);
+      // Optionally, navigate or process the scanned data
+    });
   }
 }

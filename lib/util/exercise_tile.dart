@@ -1,16 +1,17 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class ExerciseTile extends StatelessWidget {
   final IconData icon;
   final String exerciseName;
-  final int numberOfExercises;
+  
   final VoidCallback onTap;
 
   const ExerciseTile({
     Key? key,
     required this.icon,
     required this.exerciseName,
-    required this.numberOfExercises,
     required this.onTap,
   }) : super(key: key);
 
@@ -56,14 +57,14 @@ class ExerciseTile extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 5),
-                      Text(
+                      /*Text(
                         '$numberOfExercises Exercises',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
                           color: Colors.grey,
                         ),
-                      ),
+                      ),*/
                     ],
                   ),
                 ],
