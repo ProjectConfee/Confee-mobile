@@ -6,6 +6,98 @@ class Discussion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ScrollController scrollController = ScrollController();
+
+    void showDetailsDialog(BuildContext context, String question, List<String> replies) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            title: Text(
+              'Discussion Details',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            content: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    question,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 10),
+                  ...replies.map((reply) => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                    child: Text(reply),
+                  )),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('Close'),
+              ),
+            ],
+          );
+        },
+      );
+    }
+
+    void showInputDialog(BuildContext context) {
+      final TextEditingController questionController = TextEditingController();
+
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            title: Text(
+              'New Discussion',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextField(
+                  controller: questionController,
+                  // Align text to the start
+                  decoration: InputDecoration(
+                    labelText: 'Question',
+                    hintText: 'Enter your question',
+                    alignLabelWithHint: true,
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
+                  ),
+
+                  maxLines: 6,
+                ),
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  String question = questionController.text;
+                  // Handle the input data here, e.g., save it to a list or send it to a server
+                },
+                child: Text('Submit'),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('Cancel'),
+              ),
+            ],
+          );
+        },
+      );
+    }
+
+
     return Scaffold(
       body: Stack(
         children: [
@@ -81,78 +173,92 @@ class Discussion extends StatelessWidget {
           Positioned.fill(
             top: 130,
             child: Scrollbar(
+              controller: scrollController,
+              thickness: 10.0, // Adjust the thickness here
+              radius: Radius.circular(10.0), // Adjust the radius here
+              thumbVisibility: true,
               child: SingleChildScrollView(
+                controller: scrollController,
                 padding: EdgeInsets.all(30.0),
                 child: Column(
                   children: List.generate(5, (index) {
-                    return Card(
-                      color: Color(0xFFDADADA), // Grey color box
-                      margin: EdgeInsets.only(bottom: 20.0),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    SizedBox(height: 20,),
-                                    CircleAvatar(
-                                      backgroundImage: AssetImage('assets/img/profile.webp'), // Replace with the profile image path
-                                    ),
-                                    SizedBox(height: 5),
-                                    Text(
-                                      'Viranga', // Replace with the username
-                                      style: TextStyle(
-                                        fontSize: 12.0,
-                                        color: Colors.grey[700],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(width: 20),
-                                Expanded(
-                                  child: Text(
-                                    'This is the content of the question which I have This is the content of the question which I ',
-                                    style: TextStyle(
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 2.0),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 128.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    return GestureDetector(
+                      onTap: () {
+                        showDetailsDialog(
+                          context,
+                          'This is the full version of the question which I have', // Replace with the full question
+                          List.generate(10, (replyIndex) => 'Reply ${replyIndex + 1}'), // Replace with actual replies
+                        );
+                      },
+                      child: Card(
+                        color: Color(0xFFDADADA), // Grey color box
+                        margin: EdgeInsets.only(bottom: 20.0),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
                                 children: [
-                                  Row(
+                                  Column(
                                     children: [
-                                      Icon(Icons.reply),
-                                      SizedBox(width: 5), // Add a small gap between the icon and text
+                                      SizedBox(height: 20,),
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage('assets/img/profile.webp'), // Replace with the profile image path
+                                      ),
+                                      SizedBox(height: 5),
                                       Text(
-                                        '10 replies', // Replace with actual number of replies
+                                        'Viranga', // Replace with the username
                                         style: TextStyle(
-                                          fontSize: 14.0,
-                                          color: Colors.grey[600],
+                                          fontSize: 12.0,
+                                          color: Colors.grey[700],
                                         ),
                                       ),
                                     ],
                                   ),
-                                  Text(
-                                    '2 hours ago', // Replace with actual time
-                                    style: TextStyle(
-                                      fontSize: 14.0,
-                                      color: Colors.grey[600],
+                                  SizedBox(width: 20),
+                                  Expanded(
+                                    child: Text(
+                                      'This is the content of the question which I have This is the content of the question which I ',
+                                      style: TextStyle(
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
                                   ),
                                 ],
                               ),
-                            ),
-                          ],
+                              SizedBox(height: 2.0),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 128.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(Icons.reply),
+                                        SizedBox(width: 5), // Add a small gap between the icon and text
+                                        Text(
+                                          '10 replies', // Replace with actual number of replies
+                                          style: TextStyle(
+                                            fontSize: 14.0,
+                                            color: Colors.grey[600],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      '2 hours ago', // Replace with actual time
+                                      style: TextStyle(
+                                        fontSize: 14.0,
+                                        color: Colors.grey[600],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );
@@ -166,7 +272,7 @@ class Discussion extends StatelessWidget {
       bottomNavigationBar: HomeBottomBar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your onPressed code here!
+          showInputDialog(context);
         },
         backgroundColor: Color(0xFFADDBED),
         child: Icon(
