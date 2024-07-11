@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.6
   qr_code_scanner: ^1.0.0
+  flutter_pdfview: ^1.0.4
+  syncfusion_flutter_pdfviewer: ^19.2.56
  
   
 
@@ -38,3 +40,4 @@ flutter:
     - asset/images/v.png
     - asset/images/vv.png
     - asset/images/download.png
+    - asset/pdfs/aa.pdf
