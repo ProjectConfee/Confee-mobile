@@ -1,14 +1,18 @@
+// home_page.dart
+
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:youtube_1/util/emoticon_face.dart';
-import 'package:youtube_1/util/exercise_tile.dart';
-import 'package:youtube_1/pages/resourceview_page.dart'; // Import ResourcePage
-import 'package:youtube_1/pages/profile_view.dart'; // Import ProfileViewPage
-import 'package:youtube_1/pages/description_page.dart'; // Import DescriptionPage
-import 'package:youtube_1/pages/stall_map_page.dart'; // Import StallMapPage
-import 'package:youtube_1/pages/stall_checked.dart'; // Import StallCheckedPage
-import 'package:youtube_1/pages/notification.dart'; // Import NotificationPage
-import 'package:youtube_1/pages/qrscan.dart'; // Import QRScanPage
-import 'package:youtube_1/pages/competition.dart'; // Import CompetitionPage
+import 'package:youtube_1/pages/participant/innovation/util/emoticon_face.dart';
+import 'package:youtube_1/pages/participant/innovation/util/exercise_tile.dart';
+import 'package:youtube_1/pages/participant/innovation/resourceview_page.dart'; // Import ResourcePage
+import 'package:youtube_1/pages/participant/innovation/profile_view.dart'; // Import ProfileViewPage
+import 'package:youtube_1/pages/participant/innovation/description_page.dart'; // Import DescriptionPage
+import 'package:youtube_1/pages/participant/innovation/stall_map_page.dart'; // Import StallMapPage
+import 'package:youtube_1/pages/participant/innovation/stall_checked.dart'; // Import StallCheckedPage
+import 'package:youtube_1/pages/participant/innovation/notification.dart'; // Import NotificationPage
+import 'package:youtube_1/pages/participant/innovation/qrscan_page.dart'; // Import QRScanPage
+import 'package:youtube_1/pages/participant/innovation/competition.dart'; // Import CompetitionPage
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -80,12 +84,9 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.blue[800],
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: 'Packages'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Profile',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home,color: Colors.black,), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_bag,color:Colors.black,), label: 'Packages'),
+          BottomNavigationBarItem(icon: Icon(Icons.account_circle,color:Colors.black,),label: 'Profile'),
         ],
         onTap: (index) {
           if (index == 2) {
@@ -150,7 +151,8 @@ class _HomePageState extends State<HomePage> {
                       color: Color.fromARGB(255, 223, 234, 245),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    padding: EdgeInsets.all(12),
+                    padding: EdgeInsets.only(left: 15, top: 1, bottom: 1),
+
                     child: Row(
                       children: [
                         Icon(
@@ -176,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 25),
+                  SizedBox(height: 35),
                   // Four different faces
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -186,10 +188,12 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           _navigateToStallMapPage(context);
                         },
-                        child: Column(
+                        child: Column( 
                           children: [
-                            EmoticonFace(
-                              emoticonFace: '🗺️', // Map emoji
+                            EmoticonFace(icon: Icons.map,
+
+                             
+ // Map emoji
                             ),
                             SizedBox(height: 8),
                             Text(
@@ -206,7 +210,9 @@ class _HomePageState extends State<HomePage> {
                         },
                         child: Column(
                           children: [
-                            EmoticonFace(emoticonFace: '🔗'),
+                            EmoticonFace(                      
+                                  icon: Icons.business,
+),
                             SizedBox(height: 8),
                             Text(
                               'Resources',
@@ -222,7 +228,9 @@ class _HomePageState extends State<HomePage> {
                         },
                         child: Column(
                           children: [
-                            EmoticonFace(emoticonFace: '📜'),
+                            EmoticonFace(
+                                                        icon: Icons.help,
+),
                             SizedBox(height: 8),
                             Text(
                               'Description',
@@ -232,13 +240,31 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       // QR Scan
-                      
+                      // GestureDetector(
+                      //   onTap: () {
+                      //     _navigateToQRScanPage(context); // Navigate to QRScanPage
+                      //   },
+                      //   child: Column(
+                      //     children: [
+                      //       EmoticonFace(
+                      //         icon: Icons.qr_code, // QR code icon
+                      //       ),
+                      //       SizedBox(height: 8),
+                      //       Text(
+                      //         'QR Scan',
+                      //         style: TextStyle(color: Colors.white),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
                     ],
                   ),
                   SizedBox(height: 25),
                 ],
               ),
             ),
+            SizedBox(height: 12),
+
             Expanded(
               child: Container(
                 padding: EdgeInsets.all(25),
@@ -267,7 +293,7 @@ class _HomePageState extends State<HomePage> {
                           ExerciseTile(
                             icon: Icons.search,
                             exerciseName: 'I’M A RESEARCHER COMPETITION ',
-                            numberOfExercises: 16,
+                            
                             onTap: () {
                               _navigateToCompetitionPage(context); // Navigate to CompetitionPage on tile tap
                             },
@@ -275,13 +301,13 @@ class _HomePageState extends State<HomePage> {
                           ExerciseTile(
                             icon: Icons.check_circle,
                             exerciseName: 'STALL CHECKED IN PROCESS',
-                            numberOfExercises: 20,
+                            
                             onTap: () => _navigateToStallCheckedPage(context), // Navigate to StallCheckedPage
                           ),
                           ExerciseTile(
                             icon: Icons.qr_code,
                             exerciseName: 'Scan QR Code',
-                            numberOfExercises: 10,
+                           
                             onTap: () {
                               _navigateToQRScanPage(context); // Navigate to QRScanPage on QR code tile tap
                             },

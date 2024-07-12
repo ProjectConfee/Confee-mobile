@@ -1,5 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:youtube_1/pages/profile_view.dart'; // Import the ProfileViewPage
+import 'package:youtube_1/pages/participant/innovation/profile_view.dart'; // Import the ProfileViewPage
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({Key? key}) : super(key: key);

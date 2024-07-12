@@ -1,6 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:youtube_1/pages/home_page.dart'; // Import your home page file
-import 'package:youtube_1/pages/profile_view.dart'; // Import ProfileViewPage
+import 'package:youtube_1/pages/participant/innovation/home_page.dart'; // Import your home page file
+import 'package:youtube_1/pages/participant/innovation/profile_view.dart'; // Import ProfileViewPage
 
 class StallMapPage extends StatelessWidget {
   const StallMapPage({Key? key}) : super(key: key);

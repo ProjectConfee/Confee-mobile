@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_1/pages/home_page.dart'; // Import the HomePage
-import 'package:youtube_1/pages/image_page.dart';
-import 'package:youtube_1/util/exercise_tile2.dart';
+import 'package:youtube_1/pages/participant/innovation/home_page.dart';
+import 'package:youtube_1/pages/participant/innovation/image_page.dart';
+import 'package:youtube_1/pages/participant/innovation/util/exercise_tile2.dart';
+import 'package:youtube_1/pages/participant/innovation/document_view.dart'; // Import DocumentViewPage
 
 class ResourceCategoryPage extends StatelessWidget {
-  const ResourceCategoryPage({super.key});
+  const ResourceCategoryPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Resource Category'),
-        backgroundColor: Colors.blue[800], // Set the app bar color
+        backgroundColor: Colors.blue[800],
       ),
       backgroundColor: Colors.blue[800],
       bottomNavigationBar: BottomNavigationBar(
@@ -22,7 +23,6 @@ class ResourceCategoryPage extends StatelessWidget {
         ],
         onTap: (index) {
           if (index == 0) {
-            // Navigate to the HomePage when the home icon is tapped
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(builder: (context) => HomePage()),
@@ -38,23 +38,11 @@ class ResourceCategoryPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 children: [
-                  // Greeting row (if needed)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [],
-                      ),
-                    ],
-                  ),
-                  SizedBox(height:0),
-                  // Search bar
+                  SizedBox(height: 33),
                   Container(
                     padding: EdgeInsets.all(0),
                     child: Row(
                       children: [
-                       
                         SizedBox(width: 49),
                         Text(
                           'COMPANY 01',
@@ -68,10 +56,6 @@ class ResourceCategoryPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 5),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [],
-                  ),
                 ],
               ),
             ),
@@ -81,10 +65,6 @@ class ResourceCategoryPage extends StatelessWidget {
                 color: Colors.grey[300],
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [],
-                    ),
                     SizedBox(height: 20),
                     Expanded(
                       child: ListView(
@@ -103,21 +83,61 @@ class ResourceCategoryPage extends StatelessWidget {
                               companyName: 'Images',
                             ),
                           ),
-                          ExerciseTile(
-                            imagePath: 'asset/images/article-line.png',
-                            companyName: 'Documents',
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DocumentViewPage(), // Navigate to DocumentViewPage
+                                ),
+                              );
+                            },
+                            child: ExerciseTile(
+                              imagePath: 'asset/images/article-line.png',
+                              companyName: 'Documents',
+                            ),
                           ),
-                          ExerciseTile(
-                            imagePath: 'asset/images/file-video-fill.png',
-                            companyName: 'Videos',
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ImagePage(),
+                                ),
+                              );
+                            },
+                            child: ExerciseTile(
+                              imagePath: 'asset/images/file-video-fill.png',
+                              companyName: 'Videos',
+                            ),
                           ),
-                          ExerciseTile(
-                            imagePath: 'asset/images/links-line.png',
-                            companyName: 'Links',
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ImagePage(),
+                                ),
+                              );
+                            },
+                            child: ExerciseTile(
+                              imagePath: 'asset/images/links-line.png',
+                              companyName: 'Links',
+                            ),
                           ),
-                          ExerciseTile(
-                            imagePath: 'asset/images/color-filter-fill.png',
-                            companyName: 'Others',
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ImagePage(),
+                                ),
+                              );
+                            },
+                            child: ExerciseTile(
+                              imagePath: 'asset/images/color-filter-fill.png',
+                              companyName: 'Others',
+                            ),
                           ),
                         ],
                       ),
