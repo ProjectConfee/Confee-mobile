@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:youtube_1/pages/home_page.dart';
-import 'package:youtube_1/pages/profile_view.dart'; // Import ProfileViewPage
+import 'package:youtube_1/pages/profile_view.dart';
+import 'package:youtube_1/pages/shared/discussion.dart'; // Import ProfileViewPage
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/', // Define initial route if needed
       routes: {
         '/': (context) => HomePage(), // Define home route
-        '/profile': (context) => ProfileViewPage(), // Define profile route
+        '/profile': (context) => ProfileViewPage(),
+        '/discssion':(context)=>Discussion(),
         // Add more routes as needed
       },
     );
