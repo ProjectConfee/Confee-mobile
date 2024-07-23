@@ -56,7 +56,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
     return BottomNavigationBar(
       items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home, color: currentIndex == 0 ? Colors.black : Colors.grey),
+          icon: Icon(Icons.home, color: currentIndex == 0 ? Colors.black : Color.fromARGB(255, 1, 1, 1)),
           label: 'Home',
         ),
         BottomNavigationBarItem(
