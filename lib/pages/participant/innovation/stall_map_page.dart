@@ -219,7 +219,7 @@ class _StallMapPageState extends State<StallMapPage> {
 
   Widget _buildFloorPlan(int floor) {
     List<Widget> rows = [];
-    int shopNumber = (floor - 1) * 13 + 1;
+    int shopNumber = (floor - 1) * 6 + 1;
     for (int i = 0; i < 2; i++) {
       List<Widget> rowShops = [];
       for (int j = 0; j < 3; j++) {
@@ -249,7 +249,7 @@ class _StallMapPageState extends State<StallMapPage> {
         ),
         child: Center(
           child: Text(
-            'Shop $number',
+            'Stall $number',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ),
@@ -259,8 +259,8 @@ class _StallMapPageState extends State<StallMapPage> {
 
   Widget _buildShopNames() {
     List<Widget> shopNames = [];
-    for (int i = 1; i <= 25; i++) {
-      shopNames.add(Text('Shop $i: Name of Shop $i'));
+    for (int i = 1; i <= 12; i++) {
+      shopNames.add(Text('Stall $i: Name of Shop $i'));
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
