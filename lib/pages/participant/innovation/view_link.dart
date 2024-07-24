@@ -20,7 +20,31 @@ class _ViewLinkPageState extends State<ViewLinkPage> {
       'url': 'https://resources.workable.com/hr-terms/what-are-soft-skills',
     },
     {
-      'title': 'Soft Web',
+      'title': 'Improve your presentaion skills',
+      'url': 'https://www.softwebsolutions.com',
+    },
+    {
+      'title': ' Career Goals and Interests',
+      'url': 'https://wso2.com/',
+    },
+    {
+      'title': 'Professional Skills Development',
+      'url': 'https://resources.workable.com/hr-terms/what-are-soft-skills',
+    },
+    {
+      'title': 'Understanding Internships',
+      'url': 'https://www.softwebsolutions.com',
+    },
+    {
+      'title': 'FundamentalProgramming Concept',
+      'url': 'https://wso2.com/',
+    },
+    {
+      'title': ' Networking Fundamentals',
+      'url': 'https://resources.workable.com/hr-terms/what-are-soft-skills',
+    },
+    {
+      'title': 'Career Exploration and Planning',
       'url': 'https://www.softwebsolutions.com',
     },
   ];
