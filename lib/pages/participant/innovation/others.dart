@@ -269,7 +269,7 @@ class OthersPage extends StatelessWidget {
           contentPadding: EdgeInsets.all(16.0),
           leading: Icon(icon, size: 50.0, color: Colors.blue),
           title: Text(title, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
-          trailing: Icon(Icons.arrow_forward_ios, size: 24.0),
+          //trailing: Icon(Icons.arrow_forward_ios, size: 24.0),
         ),
       ),
     );
