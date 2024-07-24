@@ -17,6 +17,7 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^20.2.47
   youtube_player_flutter: ^8.0.0
   webview_flutter: ^3.0.0
+  url_launcher: ^6.1.10
   
 
 
