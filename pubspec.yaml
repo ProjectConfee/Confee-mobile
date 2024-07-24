@@ -13,8 +13,9 @@ dependencies:
   cupertino_icons: ^1.0.6
   qr_code_scanner: ^1.0.0
   flutter_pdfview: ^1.0.4
-  syncfusion_flutter_pdfviewer: ^19.2.56
  
+  syncfusion_flutter_pdfviewer: ^20.2.47
+  youtube_player_flutter: ^8.0.0
   
 
 
@@ -41,3 +42,8 @@ flutter:
     - asset/images/vv.png
     - asset/images/download.png
     - asset/pdfs/aa.pdf
+    - asset/pdfs/dd.pdf
+    - asset/pdfs/kk.pdf
+    - asset/pdfs/k.pdf
+    
+    
