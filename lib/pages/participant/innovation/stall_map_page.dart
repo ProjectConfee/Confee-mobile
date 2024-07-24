@@ -220,7 +220,7 @@ class _StallMapPageState extends State<StallMapPage> {
   Widget _buildFloorPlan(int floor) {
     List<Widget> rows = [];
     int shopNumber = (floor - 1) * 13 + 1;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 2; i++) {
       List<Widget> rowShops = [];
       for (int j = 0; j < 3; j++) {
         if (shopNumber <= floor * 13) {
