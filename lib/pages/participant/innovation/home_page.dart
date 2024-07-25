@@ -1124,7 +1124,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           SizedBox(height: 8),
                           Text(
-                            '28 Jun, 2023',
+                            '28 July, 2024',
                             style: TextStyle(
                               color: Colors.blue[200],
                             ),
