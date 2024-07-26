@@ -652,16 +652,16 @@
 //   }
 // }
 import 'package:flutter/material.dart';
-import 'package:youtube_1/pages/participant/innovation/util/emoticon_face.dart';
-import 'package:youtube_1/pages/participant/innovation/util/exercise_tile.dart';
+import 'package:youtube_1/utils/emoticon_face.dart';
+import 'package:youtube_1/utils/exercise_tile.dart';
 import 'package:youtube_1/pages/participant/innovation/resourceview_page.dart';
-import 'package:youtube_1/pages/participant/innovation/profile_view.dart';
-import 'package:youtube_1/pages/participant/innovation/description_page.dart';
+import 'package:youtube_1/screens/sponsers/profile_view.dart';
+import 'package:youtube_1/screens/sponsers/description_page.dart';
 import 'package:youtube_1/pages/participant/innovation/stall_map_page.dart';
 import 'package:youtube_1/pages/participant/innovation/stall_checked.dart';
-import 'package:youtube_1/pages/participant/innovation/notification.dart';
+import 'package:youtube_1/screens/sponsers/notification.dart';
 import 'package:youtube_1/pages/participant/innovation/qrscan_page.dart';
-import 'package:youtube_1/pages/participant/innovation/competition.dart'; // Ensure this import is correct
+import 'package:youtube_1/screens/sponsers/competition.dart'; // Ensure this import is correct
 import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Ensure this import is correct
 
 class HomePage extends StatefulWidget {
