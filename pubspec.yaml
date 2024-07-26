@@ -42,3 +42,6 @@ flutter:
     - asset/images/download.png
     - asset/pdfs/aa.pdf
     - asset/images/registerNow.png
+    - asset/images/speaker_1.jpg
+    - asset/images/speaker_2.jpg
+    - asset/images/speaker_3.jpg
