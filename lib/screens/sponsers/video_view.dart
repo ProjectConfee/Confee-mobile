@@ -61,10 +61,10 @@
 
 
 import 'package:flutter/material.dart';
- import 'package:youtube_1/pages/participant/innovation/profile_view.dart'; // Import ProfileViewPage
+ import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import ProfileViewPage
 
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:youtube_1/pages/participant/innovation/home_page.dart';
+import 'package:youtube_1/screens/sponsers/home_page.dart';
 import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart';
 
 class VideoViewPage extends StatefulWidget {

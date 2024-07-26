@@ -137,10 +137,10 @@
 
 import 'package:flutter/material.dart';
 //import 'home_page.dart';
-import 'package:youtube_1/pages/participant/innovation/home_page.dart'; // Import your home page file
+import 'package:youtube_1/screens/sponsers/home_page.dart'; // Import your home page file
 
 //import 'package_page.dart';
-import 'custom_bottom_navigation_bar.dart';
+import '../../pages/participant/innovation/custom_bottom_navigation_bar.dart';
 
 class ProfileViewPage extends StatefulWidget {
   const ProfileViewPage({Key? key}) : super(key: key);

@@ -69,8 +69,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'home_page.dart'; // Import your home page file
-import 'profile_view.dart'; // Import ProfileViewPage
+import '../../../screens/sponsers/home_page.dart'; // Import your home page file
+import '../../../screens/sponsers/profile_view.dart'; // Import ProfileViewPage
 import 'custom_bottom_navigation_bar.dart'; // Import the CustomBottomNavigationBar
 
 class QRScanPage extends StatefulWidget {

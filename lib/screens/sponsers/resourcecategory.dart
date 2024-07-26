@@ -1216,10 +1216,10 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:youtube_1/pages/participant/innovation/home_page.dart';
-import 'package:youtube_1/pages/participant/innovation/image_page.dart';
+import 'package:youtube_1/screens/sponsers/home_page.dart';
+import 'package:youtube_1/screens/sponsers/image_page.dart';
 import 'package:youtube_1/pages/participant/innovation/document_view.dart'; // Import DocumentViewPage
-import 'package:youtube_1/pages/participant/innovation/profile_view.dart'; // Import ProfileViewPage
+import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import ProfileViewPage
 import 'package:youtube_1/pages/participant/innovation/video_view.dart'; // Import VideoViewPage
 import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Import CustomBottomNavigationBar
 
