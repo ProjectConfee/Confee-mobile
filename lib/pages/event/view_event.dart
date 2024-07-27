@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_1/pages/event/resource.dart';
 import 'package:youtube_1/pages/event/schedule.dart';
 
 class ViewEvent extends StatelessWidget {
@@ -50,7 +51,7 @@ class ViewEvent extends StatelessWidget {
             children: [
               Center(child: Text("Beach Tab Content")),
               Schedule(),
-              Center(child: Text("Beach Tab Content")),
+              Resource(),
               Center(child: Text("Brightness Tab Content")),
               Center(child: Text("Beach Tab Content")),
             ],
