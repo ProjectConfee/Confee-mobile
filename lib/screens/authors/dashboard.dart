@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../shared/bottom_bar.dart'; // Make sure this is the correct import path for HomeBottomBar
 
 class ParticipantDashboard extends StatelessWidget {
   @override
@@ -11,11 +12,7 @@ class ParticipantDashboard extends StatelessWidget {
               height: 130,
               color: Color(0xFF050C9B),
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(
-                  left: 10.0,
-                  top: 20.0,
-                  right: 10.0
-              ),
+              padding: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
               child: Stack(
                 children: [
                   Column(
@@ -150,6 +147,9 @@ class ParticipantDashboard extends StatelessWidget {
                                 fontSize: 20.0,
                               ),
                             ),
+                            onTap: () {
+                              Navigator.pushReplacementNamed(context, '/paticipant_innovation_view');
+                            },
                             // trailing: Icon(Icons.arrow_forward, color: Color(0xFF3572EF), size: 30.0,),
                           ),
                         );
@@ -162,22 +162,7 @@ class ParticipantDashboard extends StatelessWidget {
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: const <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.dashboard),
-      //       label: 'Dashboard',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.person),
-      //       label: 'Profile',
-      //     ),
-      //   ],
-      // ),
+      bottomNavigationBar: HomeBottomBar(), // Set the bottom bar here
     );
   }
 }

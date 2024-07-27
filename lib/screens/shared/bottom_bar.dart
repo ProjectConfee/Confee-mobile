@@ -27,7 +27,7 @@ class HomeBottomBar extends StatelessWidget {
               icon: Icons.home_outlined,
               label: "Home",
               onTap: () {
-                Navigator.pushNamed(context, '/home');
+                Navigator.pushReplacementNamed(context, '/participant_dashboard');
               },
             ),
           ),

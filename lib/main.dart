@@ -52,6 +52,7 @@ class MyApp extends StatelessWidget {
         // ### Authors ###
 
          '/participant_dashboard': (context) => ParticipantDashboard(),
+        '/paticipant_innovation_view': (context)=>HomePage_Sponser(),
 
         // ### Speakers ###
 
