@@ -91,7 +91,9 @@ class PhoneOtp extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 80.0),
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/reset_password');
+            },
             child: Text(
               "Next",
               style: TextStyle(fontSize: 20,

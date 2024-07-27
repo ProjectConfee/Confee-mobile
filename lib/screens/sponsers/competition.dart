@@ -88,9 +88,13 @@
 //import 'package:youtube_1/pages/participant/innovation/profile_view.dart';
 
 import 'package:flutter/material.dart';
-import 'package:youtube_1/screens/sponsers/home_page.dart';
-import 'package:youtube_1/screens/sponsers/profile_view.dart';
-import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Import the new widget
+// import 'package:youtube_1/screens/sponsers/home_page.dart';
+// import 'package:youtube_1/screens/sponsers/profile_view.dart';
+// import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart';
+
+import 'custom_bottom_navigation_bar.dart';
+import 'home_page.dart';
+import 'profile_view.dart'; // Import the new widget
 
 class CompetitionPage extends StatefulWidget {
   const CompetitionPage({Key? key}) : super(key: key);
@@ -107,7 +111,7 @@ class _CompetitionPageState extends State<CompetitionPage> {
       case 0:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage_Sponser()),
         );
         break;
       case 1:

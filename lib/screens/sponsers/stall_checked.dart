@@ -86,9 +86,13 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:youtube_1/screens/sponsers/home_page.dart'; // Import HomePage for navigation
-import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import ProfilePage for navigation
-import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Import CustomBottomNavigationBar
+// import 'package:youtube_1/screens/sponsers/home_page.dart'; // Import HomePage for navigation
+// import 'package:youtube_1/screens/sponsers/profile_view.dart';
+
+import 'custom_bottom_navigation_bar.dart';
+import 'home_page.dart';
+import 'profile_view.dart'; // Import ProfilePage for navigation
+// import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Import CustomBottomNavigationBar
 
 class StallCheckedPage extends StatefulWidget {
   const StallCheckedPage({Key? key}) : super(key: key);
@@ -109,7 +113,7 @@ class _StallCheckedPageState extends State<StallCheckedPage> {
       case 0:
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage_Sponser()),
           (route) => false, // Clear all routes on the stack and push HomePage
         );
         break;
@@ -148,7 +152,7 @@ class _StallCheckedPageState extends State<StallCheckedPage> {
               onPressed: () {
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => HomePage_Sponser()),
                   (route) => false, // Navigate to HomePage on button press
                 );
               },

@@ -97,9 +97,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import the ProfileViewPage
+// import 'package:youtube_1/screens/sponsers/profile_view.dart';
+
+import 'custom_bottom_navigation_bar.dart';
+import 'profile_view.dart'; // Import the ProfileViewPage
 //import 'package:youtube_1/pages/participant/innovation/home_page.dart'; // Import the HomePage
-import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Import CustomBottomNavigationBar
+// import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Import CustomBottomNavigationBar
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);

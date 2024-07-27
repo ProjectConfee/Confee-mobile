@@ -1216,12 +1216,19 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:youtube_1/screens/sponsers/home_page.dart';
-import 'package:youtube_1/screens/sponsers/image_page.dart';
-import 'package:youtube_1/pages/participant/innovation/document_view.dart'; // Import DocumentViewPage
-import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import ProfileViewPage
-import 'package:youtube_1/pages/participant/innovation/video_view.dart'; // Import VideoViewPage
-import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Import CustomBottomNavigationBar
+// import 'package:youtube_1/screens/sponsers/home_page.dart';
+// import 'package:youtube_1/screens/sponsers/image_page.dart';
+// import 'package:youtube_1/pages/participant/innovation/document_view.dart'; // Import DocumentViewPage
+// import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import ProfileViewPage
+// import 'package:youtube_1/pages/participant/innovation/video_view.dart'; // Import VideoViewPage
+// import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart';
+
+import 'custom_bottom_navigation_bar.dart';
+import 'document_view.dart';
+import 'home_page.dart';
+import 'image_page.dart';
+import 'profile_view.dart';
+import 'video_view.dart'; // Import CustomBottomNavigationBar
 
 class ResourceCategoryPage extends StatefulWidget {
   const ResourceCategoryPage({Key? key}) : super(key: key);
@@ -1243,7 +1250,7 @@ class _ResourceCategoryPageState extends State<ResourceCategoryPage> {
         // Navigate to the HomePage when the home icon is tapped
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage_Sponser()),
           (Route<dynamic> route) => false,
         );
         break;

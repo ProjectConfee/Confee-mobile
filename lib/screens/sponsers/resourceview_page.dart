@@ -254,10 +254,11 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:youtube_1/pages/participant/innovation/resourcecategory.dart';  // Import the ResourceCategoryPage
+// import 'package:youtube_1/pages/participant/innovation/resourcecategory.dart';  // Import the ResourceCategoryPage
 import '../../../screens/sponsers/home_page.dart'; // Import HomePage
 import '../../../screens/sponsers/profile_view.dart'; // Import ProfileViewPage
-import 'custom_bottom_navigation_bar.dart'; // Import the CustomBottomNavigationBar
+import 'custom_bottom_navigation_bar.dart';
+import 'resourcecategory.dart'; // Import the CustomBottomNavigationBar
 
 class ResourcePage extends StatefulWidget {
   const ResourcePage({Key? key}) : super(key: key);
@@ -279,7 +280,7 @@ class _ResourcePageState extends State<ResourcePage> {
         // Navigate to the HomePage when the home icon is tapped
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage_Sponser()),
           (Route<dynamic> route) => false,
         );
         break;

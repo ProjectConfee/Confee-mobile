@@ -1,4 +1,4 @@
-name: youtube_1
+name: confee
 description: "A new Flutter project."
 publish_to: 'none'
 
@@ -28,22 +28,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - asset/images/file-image-fill.png
-    - asset/images/file-video-fill.png
-    - asset/images/color-filter-fill.png
-    - asset/images/article-line.png
-    - asset/images/links-line.png
-    - asset/images/silver_badge.png
-    - asset/images/gold_badge.png
-    - asset/images/platinum_badge.png
-    - asset/images/download.png
-    - asset/images/R.png
-    - asset/images/v.png
-    - asset/images/vv.png
-    - asset/images/download.png
-    - asset/pdfs/aa.pdf
-    - asset/pdfs/dd.pdf
-    - asset/pdfs/kk.pdf
-    - asset/pdfs/k.pdf
-    
+    - asset/images/
+
     

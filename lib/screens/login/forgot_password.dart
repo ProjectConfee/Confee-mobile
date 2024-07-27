@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ForgotPassword extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -80,7 +81,9 @@ class ForgotPassword extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 80.0),
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/login');
+            },
             child: Text(
               "Next",
               style: TextStyle(fontSize: 20,

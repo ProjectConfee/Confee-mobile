@@ -261,9 +261,13 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:youtube_1/screens/sponsers/home_page.dart'; // Import the HomePage
-import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import ProfilePage
-import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Import CustomBottomNavigationBar
+// import 'package:youtube_1/screens/sponsers/home_page.dart'; // Import the HomePage
+// import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import ProfilePage
+// import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart';
+
+import 'custom_bottom_navigation_bar.dart';
+import 'home_page.dart';
+import 'profile_view.dart'; // Import CustomBottomNavigationBar
 
 class ImagePage extends StatefulWidget {
   @override
@@ -281,7 +285,7 @@ class _ImagePageState extends State<ImagePage> {
     if (index == 0) {
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => HomePage_Sponser()),
         (Route<dynamic> route) => false,
       );
     } else if (index == 2) {
