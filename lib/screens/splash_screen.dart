@@ -10,7 +10,7 @@ class _StartState extends State<StartPage> {
   void initState() {
     super.initState();
     // Navigate to login screen after 10 seconds
-    Future.delayed(Duration(seconds: 10), () {
+    Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, '/login');
     });
   }
@@ -26,7 +26,7 @@ class _StartState extends State<StartPage> {
 
   Widget _image() {
     return Image.asset(
-      'assets/img/logo1.png',
+      'asset/images/logo1.png',
       height: 300,
       fit: BoxFit.contain,
     );
