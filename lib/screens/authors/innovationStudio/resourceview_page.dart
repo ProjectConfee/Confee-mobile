@@ -255,9 +255,11 @@
 
 import 'package:flutter/material.dart';
 // import 'package:youtube_1/pages/participant/innovation/resourcecategory.dart';  // Import the ResourceCategoryPage
-import '../../../screens/sponsers/home_page.dart'; // Import HomePage
-import '../../../screens/sponsers/profile_view.dart'; // Import ProfileViewPage
+// import '../../../screens/sponsers/home_page.dart'; // Import HomePage
+// import '../../../screens/sponsers/profile_view.dart'; // Import ProfileViewPage
 import 'custom_bottom_navigation_bar.dart';
+import 'home_page.dart';
+import 'profile_view.dart';
 import 'resourcecategory.dart'; // Import the CustomBottomNavigationBar
 
 class ResourcePage extends StatefulWidget {

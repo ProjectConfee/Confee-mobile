@@ -664,8 +664,11 @@ import 'package:flutter/material.dart';
 // import 'package:youtube_1/screens/sponsers/competition.dart'; // Ensure this import is correct
 // import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart';
 
-import '../../utils/emoticon_face.dart';
-import '../../utils/exercise_tile.dart';
+import '../../../utils/emoticon_face.dart';
+import '../../../utils/exercise_tile.dart';
+// import '../../utils/emoticon_face.dart';
+// import '../../utils/exercise_tile.dart';
+// import '../authors/innovationStudio/competition.dart';
 import 'competition.dart';
 import 'custom_bottom_navigation_bar.dart';
 import 'description_page.dart';
