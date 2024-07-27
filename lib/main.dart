@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:youtube_1/pages/participant/innovation/home_page.dart';
 // import 'package:youtube_1/pages/participant/innovation/profile_view.dart';
 
+import 'screens/authors/innovationStudio/home_page.dart';
 import 'screens/authors/profile.dart';
 import 'screens/login/forgot_password.dart';
 import 'screens/login/email_otp.dart';
@@ -10,7 +11,7 @@ import 'screens/login/phone_otp.dart';
 import 'screens/login/login.dart';
 import 'screens/login/reset_password.dart';
 import 'screens/splash_screen.dart';
-import 'screens/sponsers/home_page.dart'; // Import ProfileViewPage
+// import 'screens/sponsers/home_page.dart'; // Import ProfileViewPage
 
 void main() {
   runApp(const MyApp());

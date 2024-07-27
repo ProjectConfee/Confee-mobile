@@ -92,6 +92,9 @@ import 'package:flutter/material.dart';
 // import 'package:youtube_1/screens/sponsers/profile_view.dart';
 // import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart';
 
+// import '../../sponsers/custom_bottom_navigation_bar.dart';
+// import '../../sponsers/home_page.dart';
+// import '../../sponsers/profile_view.dart';
 import 'custom_bottom_navigation_bar.dart';
 import 'home_page.dart';
 import 'profile_view.dart'; // Import the new widget

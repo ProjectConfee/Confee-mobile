@@ -131,9 +131,13 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import '../../../screens/sponsers/home_page.dart'; // Import your home page file
-import '../../../screens/sponsers/profile_view.dart'; // Import ProfileViewPage
-import 'custom_bottom_navigation_bar.dart'; // Import the CustomBottomNavigationBar
+
+import 'custom_bottom_navigation_bar.dart';
+import 'home_page.dart';
+import 'profile_view.dart';
+// import '../../../../screens/sponsers/home_page.dart'; // Import your home page file
+// import '../../../../screens/sponsers/profile_view.dart'; // Import ProfileViewPage
+// import '../../sponsers/custom_bottom_navigation_bar.dart'; // Import the CustomBottomNavigationBar
 
 class StallMapPage extends StatefulWidget {
   const StallMapPage({Key? key}) : super(key: key);
