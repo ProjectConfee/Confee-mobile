@@ -652,26 +652,38 @@
 //   }
 // }
 import 'package:flutter/material.dart';
-import 'package:youtube_1/utils/emoticon_face.dart';
-import 'package:youtube_1/utils/exercise_tile.dart';
-import 'package:youtube_1/pages/participant/innovation/resourceview_page.dart';
-import 'package:youtube_1/screens/sponsers/profile_view.dart';
-import 'package:youtube_1/screens/sponsers/description_page.dart';
-import 'package:youtube_1/pages/participant/innovation/stall_map_page.dart';
-import 'package:youtube_1/pages/participant/innovation/stall_checked.dart';
-import 'package:youtube_1/screens/sponsers/notification.dart';
-import 'package:youtube_1/pages/participant/innovation/qrscan_page.dart';
-import 'package:youtube_1/screens/sponsers/competition.dart'; // Ensure this import is correct
-import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Ensure this import is correct
+// import 'package:youtube_1/utils/emoticon_face.dart';
+// import 'package:youtube_1/utils/exercise_tile.dart';
+// import 'package:youtube_1/pages/participant/innovation/resourceview_page.dart';
+// import 'package:youtube_1/screens/sponsers/profile_view.dart';
+// import 'package:youtube_1/screens/sponsers/description_page.dart';
+// import 'package:youtube_1/pages/participant/innovation/stall_map_page.dart';
+// import 'package:youtube_1/pages/participant/innovation/stall_checked.dart';
+// import 'package:youtube_1/screens/sponsers/notification.dart';
+// import 'package:youtube_1/pages/participant/innovation/qrscan_page.dart';
+// import 'package:youtube_1/screens/sponsers/competition.dart'; // Ensure this import is correct
+// import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+import '../../utils/emoticon_face.dart';
+import '../../utils/exercise_tile.dart';
+import 'competition.dart';
+import 'custom_bottom_navigation_bar.dart';
+import 'description_page.dart';
+import 'notification.dart';
+import 'profile_view.dart';
+import 'qrscan_page.dart';
+import 'resourceview_page.dart';
+import 'stall_checked.dart';
+import 'stall_map_page.dart'; // Ensure this import is correct
+
+class HomePage_Sponser extends StatefulWidget {
+  const HomePage_Sponser({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage_Sponser> {
   int _currentIndex = 0;
 
   void _onBottomNavBarTapped(int index) {
@@ -679,7 +691,7 @@ class _HomePageState extends State<HomePage> {
       case 0:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage_Sponser()),
         );
         break;
       case 1:

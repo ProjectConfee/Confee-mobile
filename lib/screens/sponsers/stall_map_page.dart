@@ -154,7 +154,7 @@ class _StallMapPageState extends State<StallMapPage> {
       case 0:
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage_Sponser()),
           (Route<dynamic> route) => false,
         );
         break;

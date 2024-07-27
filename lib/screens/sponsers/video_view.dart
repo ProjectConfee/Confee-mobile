@@ -61,11 +61,15 @@
 
 
 import 'package:flutter/material.dart';
- import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import ProfileViewPage
+ // import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import ProfileViewPage
 
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:youtube_1/screens/sponsers/home_page.dart';
-import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart';
+// import 'package:youtube_1/screens/sponsers/home_page.dart';
+
+import 'custom_bottom_navigation_bar.dart';
+import 'home_page.dart';
+import 'profile_view.dart';
+// import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart';
 
 class VideoViewPage extends StatefulWidget {
   const VideoViewPage({Key? key}) : super(key: key);
@@ -87,7 +91,7 @@ class _VideoViewPageState extends State<VideoViewPage> {
         // Navigate to the HomePage when the home icon is tapped
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage_Sponser()),
           (Route<dynamic> route) => false,
         );
         break;

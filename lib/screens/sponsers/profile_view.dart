@@ -137,10 +137,12 @@
 
 import 'package:flutter/material.dart';
 //import 'home_page.dart';
-import 'package:youtube_1/screens/sponsers/home_page.dart'; // Import your home page file
+// import 'package:youtube_1/screens/sponsers/home_page.dart'; // Import your home page file
 
 //import 'package_page.dart';
-import '../../pages/participant/innovation/custom_bottom_navigation_bar.dart';
+// import '../../pages/participant/innovation/custom_bottom_navigation_bar.dart';
+import 'custom_bottom_navigation_bar.dart';
+import 'home_page.dart';
 
 class ProfileViewPage extends StatefulWidget {
   const ProfileViewPage({Key? key}) : super(key: key);
@@ -233,7 +235,7 @@ class _ProfileViewPageState extends State<ProfileViewPage> {
             case 0:
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => HomePage()),
+                MaterialPageRoute(builder: (context) => HomePage_Sponser()),
               );
               break;
             // case 1:

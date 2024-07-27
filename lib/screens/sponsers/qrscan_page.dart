@@ -101,7 +101,7 @@ class _QRScanPageState extends State<QRScanPage> {
         // Navigate to the HomePage when the home icon is tapped
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage_Sponser()),
           (Route<dynamic> route) => false,
         );
         break;

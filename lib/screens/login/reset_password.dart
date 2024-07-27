@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ConfirmPassword extends StatelessWidget {
+class ResetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -108,7 +108,8 @@ class ConfirmPassword extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 80.0),
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/password_changed');            },
             child: Text(
               "Next",
               style: TextStyle(fontSize: 20,
