@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:youtube_1/pages/participant/innovation/home_page.dart';
 // import 'package:youtube_1/pages/participant/innovation/profile_view.dart';
 
+import 'screens/authors/dashboard.dart';
 import 'screens/authors/innovationStudio/home_page.dart';
 import 'screens/shared/profile.dart';
 import 'screens/login/forgot_password.dart';
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
 
         // ### Authors ###
 
-         '/home_authors': (context) => HomePage_Sponser(),
+         '/participant_dashboard': (context) => ParticipantDashboard(),
 
         // ### Speakers ###
 
