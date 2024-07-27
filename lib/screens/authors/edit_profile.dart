@@ -27,7 +27,10 @@ class EditProfileScreen extends StatelessWidget {
               height: 130,
               color: Color(0xFF050C9B),
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(left: 10.0, top: 20.0),
+              padding: EdgeInsets.only(
+                  left: 10.0,
+                  top: 20.0
+              ),
               child: Stack(
                 children: [
                   Column(
@@ -87,7 +90,10 @@ class EditProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.person, color: Colors.black),
+                    child: Icon(
+                        Icons.person,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Padding(
@@ -128,7 +134,10 @@ class EditProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.email, color: Colors.black),
+                    child: Icon(
+                        Icons.email,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Padding(
@@ -169,7 +178,10 @@ class EditProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.email, color: Colors.black),
+                    child: Icon(
+                        Icons.email,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Padding(
