@@ -310,7 +310,7 @@ class _SampleCardWithProfile extends StatelessWidget {
 
     return SizedBox(
       width: 450,
-      height: 150,
+
       child: Row(
         children: [
           Expanded(
@@ -378,8 +378,31 @@ class _SampleCardWithProfile extends StatelessWidget {
                               color: Colors.grey[600],
                               fontWeight: FontWeight.bold,
                             ),
-
                           ),
+                          Row(
+                            children: [
+                              const SizedBox(width: 28),
+                              ElevatedButton(
+                                onPressed: () {
+                                  // Handle Accept action
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  foregroundColor: Colors.blue[800],
+                                ),
+                                child: const Text('Chat'),
+                              ),
+                              const SizedBox(width: 8),
+                              ElevatedButton(
+                                onPressed: () {
+                                  // Handle Decline action
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  foregroundColor: Colors.blue[800],
+                                ),
+                                child: const Text('Feedback'),
+                              ),
+                            ],
+                          )
                         ],
                       ),
                     ],
