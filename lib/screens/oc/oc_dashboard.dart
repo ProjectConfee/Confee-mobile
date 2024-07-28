@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../shared/bottom_bar.dart';
-import '../oc/oc_bottomBar.dart'; // Make sure this is the correct import path for HomeBottomBar
+import 'oc_bottomBar.dart'; // Make sure this is the correct import path for HomeBottomBar
 
-class ParticipantDashboard extends StatelessWidget {
+class OcDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -175,7 +175,7 @@ class ParticipantDashboard extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: HomeBottomBar(), // Set the bottom bar here
+      bottomNavigationBar: OC_BottomBar(), // Set the bottom bar here
     );
   }
 }
