@@ -1,9 +1,17 @@
+import 'package:confee/screens/notifications/notification.dart';
 import 'package:flutter/material.dart';
 // import 'package:youtube_1/pages/participant/innovation/home_page.dart';
 // import 'package:youtube_1/pages/participant/innovation/profile_view.dart';
 
 import 'screens/authors/dashboard.dart';
+import 'screens/authors/edit_profile.dart';
 import 'screens/authors/innovationStudio/home_page.dart';
+import 'screens/authors/qrcode.dart';
+import 'screens/event/not_register_event.dart';
+import 'screens/event/select_scan.dart';
+import 'screens/event/view_event.dart';
+import 'screens/notifications/empty_notification.dart';
+import 'screens/oc/oc_dashboard.dart';
 import 'screens/shared/profile.dart';
 import 'screens/login/forgot_password.dart';
 import 'screens/login/email_otp.dart';
@@ -44,19 +52,28 @@ class MyApp extends StatelessWidget {
 
         '/discussion_forum': (context) => Discussion(),
         '/profile': (context) => ProfileScreen(),
+        '/editProfile': (context) => EditProfileScreen(),
+        '/notification': (context) => NotificationPage(),
+        '/empty_notification': (context) => EmptyNotification(),
 
-        // ### OC ###
 
-        '/home_oc': (context) => Feedbacks(),
+        // ### Event ###
+
+        '/View_Event': (context) => ViewEvent(),
+        '/no_registered_event': (context) => NotRegisterEvent(),
+
 
         // ### Authors ###
 
          '/participant_dashboard': (context) => ParticipantDashboard(),
         '/paticipant_innovation_view': (context)=>HomePage_Sponser(),
+        '/qr': (context) => QRCodePage(),
 
-        // ### Speakers ###
+        // ### OC ###
 
-         '/home_speakers': (context) => HomePage_Sponser(),
+         '/oc_qr_scan': (context) => SelectScan(),
+        '/oc_dashboard': (context) => OcDashboard(),
+
 
         // ## WorkShop Paricipants
 

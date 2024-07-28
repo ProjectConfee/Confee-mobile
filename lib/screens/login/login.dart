@@ -107,11 +107,9 @@ class LoginPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 80.0),
           child: ElevatedButton(
             onPressed: () {
+             // Navigator.pushReplacementNamed(context, '/participant_dashboard');
+              Navigator.pushReplacementNamed(context, '/oc_dashboard');
 
-              // Navigator.pushReplacementNamed(context, '/home_sponsers');
-               //Navigator.pushReplacementNamed(context, '/home_oc');
-              Navigator.pushReplacementNamed(context, '/participant_dashboard');
-              // Navigator.pushReplacementNamed(context, '/home_authors');
 
               // Navigator.pushReplacementNamed(context, '/home_workshop_participants');
             },
@@ -124,7 +122,10 @@ class LoginPage extends StatelessWidget {
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF3572EF), // Background color
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15), // Adjust padding as needed
+              padding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 15
+              ), // Adjust padding as needed
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18),
               ),
@@ -245,7 +246,10 @@ class ForgotPassword extends StatelessWidget {
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF3572EF), // Background color
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15), // Adjust padding as needed
+              padding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 15
+              ), // Adjust padding as needed
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18),
               ),

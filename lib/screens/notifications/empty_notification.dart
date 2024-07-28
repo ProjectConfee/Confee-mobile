@@ -24,7 +24,10 @@ class EmptyNotification extends StatelessWidget {
               height: 130,
               color: Color(0xFF050C9B),
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(left: 10.0, top: 20.0),
+              padding: EdgeInsets.only(
+                  left: 10.0,
+                  top: 20.0
+              ),
               child: Stack(
                 children: [
                   Column(
@@ -33,9 +36,15 @@ class EmptyNotification extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
+                          GestureDetector(
+                            onTap: () {
+                              // Navigate to the dashboard
+                              Navigator.pushReplacementNamed(context, '/participant_dashboard');
+                            },
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                            ),
                           ),
                           SizedBox(width: 10),
                           Text(
