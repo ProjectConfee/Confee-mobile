@@ -222,7 +222,10 @@ class EditProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.email, color: Colors.black),
+                    child: Icon(
+                        Icons.email,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Padding(
@@ -263,7 +266,10 @@ class EditProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.email, color: Colors.black),
+                    child: Icon(
+                        Icons.email,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Padding(
@@ -304,7 +310,10 @@ class EditProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.email, color: Colors.black),
+                    child: Icon(
+                        Icons.email,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Padding(
@@ -350,7 +359,8 @@ class EditProfileScreen extends StatelessWidget {
               ),
               child: Text(
                 "Save",
-                style: TextStyle(fontSize: 20,
+                style: TextStyle(
+                    fontSize: 20,
                     color: Colors.white
                 ), // Text color is white
               ),

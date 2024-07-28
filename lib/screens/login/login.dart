@@ -33,12 +33,17 @@ class LoginPage extends StatelessWidget {
       children: [
         Text(
           "Welcome to Confee",
-          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.bold
+          ),
         ),
         SizedBox(height: 10),
         Text(
           "ICTer Conference",
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(
+              fontSize: 20
+          ),
         ),
       ],
     );
@@ -64,7 +69,9 @@ class LoginPage extends StatelessWidget {
             ),
             fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(Icons.person),
+            prefixIcon: Icon(
+                Icons.person
+            ),
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
@@ -83,7 +90,9 @@ class LoginPage extends StatelessWidget {
             ),
             fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(Icons.lock),
+            prefixIcon: Icon(
+                Icons.lock
+            ),
           ),
           obscureText: true,
           validator: (value) {
@@ -108,7 +117,10 @@ class LoginPage extends StatelessWidget {
             },
             child: Text(
               "Login",
-              style: TextStyle(fontSize: 20, color: Colors.white), // Text color is white
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white
+              ), // Text color is white
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF3572EF), // Background color
@@ -179,7 +191,9 @@ class ForgotPassword extends StatelessWidget {
         Text(
           "Enter the email address to request a password reset",
           textAlign: TextAlign.center,  // Center align text
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(
+              fontSize: 20
+          ),
         ),
       ],
     );
@@ -203,7 +217,9 @@ class ForgotPassword extends StatelessWidget {
             ),
             fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(Icons.person),
+            prefixIcon: Icon(
+                Icons.person
+            ),
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {

@@ -33,7 +33,8 @@ class ForgotPassword extends StatelessWidget {
         Text(
           "Forgot password",
           textAlign: TextAlign.center,  // Center align text
-          style: TextStyle(fontSize: 40,
+          style: TextStyle(
+              fontSize: 40,
               fontWeight: FontWeight.bold
           ),
         ),
@@ -41,7 +42,9 @@ class ForgotPassword extends StatelessWidget {
         Text(
           "Enter the email address to request a password reset",
           textAlign: TextAlign.center,  // Center align text
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(
+              fontSize: 20
+          ),
         ),
       ],
     );
@@ -86,7 +89,8 @@ class ForgotPassword extends StatelessWidget {
             },
             child: Text(
               "Next",
-              style: TextStyle(fontSize: 20,
+              style: TextStyle(
+                  fontSize: 20,
                   color: Colors.white
               ), // Text color is white
             ),
