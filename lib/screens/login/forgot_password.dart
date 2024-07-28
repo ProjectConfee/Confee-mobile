@@ -85,7 +85,7 @@ class ForgotPassword extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 80.0),
           child: ElevatedButton(
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/login');
+              Navigator.pushReplacementNamed(context, '/email_otp');
             },
             child: Text(
               "Next",
