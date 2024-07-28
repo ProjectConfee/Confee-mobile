@@ -1,4 +1,4 @@
-name: youtube_1
+name: confee
 description: "A new Flutter project."
 publish_to: 'none'
 
@@ -13,11 +13,9 @@ dependencies:
   cupertino_icons: ^1.0.6
   qr_code_scanner: ^1.0.0
   flutter_pdfview: ^1.0.4
-  syncfusion_flutter_pdfviewer: ^19.2.56
  
-  
-
-
+  syncfusion_flutter_pdfviewer: ^20.2.47
+  youtube_player_flutter: ^8.0.0
 
 dev_dependencies:
   flutter_test:
@@ -48,3 +46,6 @@ flutter:
     - asset/images/libreoffice.jpg
     - asset/images/pre2.jpeg
     - asset/images/event_post.jpg
+    - asset/images/
+
+    
