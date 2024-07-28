@@ -39,9 +39,15 @@ class EditProfileScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
+                          GestureDetector(
+                            onTap: () {
+                              // Navigate to the dashboard
+                              Navigator.pushReplacementNamed(context, '/participant_dashboard');
+                            },
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                            ),
                           ),
                           SizedBox(width: 10),
                           Text(

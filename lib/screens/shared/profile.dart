@@ -35,9 +35,15 @@ class ProfileScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
+                          GestureDetector(
+                            onTap: () {
+                              // Navigate to the dashboard
+                              Navigator.pushReplacementNamed(context, '/participant_dashboard');
+                            },
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                            ),
                           ),
                           SizedBox(width: 10),
                           Text(
@@ -388,17 +394,23 @@ class ProfileScreen extends StatelessWidget {
             top: 790,
             left: 330,
             right: 30,
-            child: Container(
-              height: 50.0,
-              decoration: BoxDecoration(
-                color: Color(0xFF3572EF),
-                borderRadius: BorderRadius.circular(50.0),
-              ),
-              child: Center(
-                child: Icon(
-                  Icons.edit,
-                  color: Colors.white,
-                  size: 24.0,
+            child: GestureDetector(
+              onTap: () {
+                // Navigate to the edit profile page
+                Navigator.pushReplacementNamed(context, '/editProfile');
+              },
+              child: Container(
+                height: 50.0,
+                decoration: BoxDecoration(
+                  color: Color(0xFF3572EF),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.edit,
+                    color: Colors.white,
+                    size: 24.0,
+                  ),
                 ),
               ),
             ),
