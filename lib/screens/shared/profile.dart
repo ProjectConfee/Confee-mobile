@@ -26,7 +26,10 @@ class ProfileScreen extends StatelessWidget {
               height: 130,
               color: Color(0xFF050C9B),
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(left: 10.0, top: 20.0),
+              padding: EdgeInsets.only(
+                  left: 10.0,
+                  top: 20.0
+              ),
               child: Stack(
                 children: [
                   Column(
@@ -114,7 +117,10 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 10.0, top: 4.0),
+                          padding: const EdgeInsets.only(
+                              left: 10.0,
+                              top: 4.0
+                          ),
                           child: Text(
                             'Olivia Grace',
                             style: TextStyle(
@@ -166,7 +172,10 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 10.0, top: 4.0),
+                          padding: const EdgeInsets.only(
+                              left: 10.0,
+                              top: 4.0
+                          ),
                           child: Text(
                             'olivia@gmail.com',
                             style: TextStyle(
@@ -218,7 +227,10 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 10.0, top: 4.0),
+                          padding: const EdgeInsets.only(
+                              left: 10.0,
+                              top: 4.0
+                          ),
                           child: Text(
                             'Olivia Grace',
                             style: TextStyle(
@@ -270,7 +282,10 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 10.0, top: 4.0),
+                          padding: const EdgeInsets.only(
+                              left: 10.0,
+                              top: 4.0
+                          ),
                           child: Text(
                             'Olivia Grace',
                             style: TextStyle(
@@ -322,7 +337,10 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 10.0, top: 4.0),
+                          padding: const EdgeInsets.only(
+                              left: 10.0,
+                              top: 4.0
+                          ),
                           child: Text(
                             'Olivia Grace',
                             style: TextStyle(
@@ -374,7 +392,10 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 10.0, top: 4.0),
+                          padding: const EdgeInsets.only(
+                              left: 10.0,
+                              top: 4.0
+                          ),
                           child: Text(
                             'Olivia Grace',
                             style: TextStyle(

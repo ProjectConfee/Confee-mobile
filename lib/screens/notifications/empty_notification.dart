@@ -24,7 +24,10 @@ class EmptyNotification extends StatelessWidget {
               height: 130,
               color: Color(0xFF050C9B),
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(left: 10.0, top: 20.0),
+              padding: EdgeInsets.only(
+                  left: 10.0,
+                  top: 20.0
+              ),
               child: Stack(
                 children: [
                   Column(

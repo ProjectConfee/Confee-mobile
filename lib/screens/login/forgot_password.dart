@@ -96,7 +96,10 @@ class ForgotPassword extends StatelessWidget {
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF3572EF), // Background color
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15), // Adjust padding as needed
+              padding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 15
+              ), // Adjust padding as needed
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18),
               ),

@@ -24,7 +24,10 @@ class NotificationPage extends StatelessWidget {
               height: 130,
               color: Color(0xFF050C9B),
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(left: 10.0, top: 20.0),
+              padding: EdgeInsets.only(
+                  left: 10.0,
+                  top: 20.0
+              ),
               child: Stack(
                 children: [
                   Column(
@@ -86,9 +89,16 @@ class NotificationPage extends StatelessWidget {
                   return Card(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
                     child: ListTile(
-                      leading: Icon(Icons.notification_important, color: Color(0xFF3572EF),),
-                      title: Text('Notification Title $index'),
-                      subtitle: Text('This is the detail of notification $index'),
+                      leading: Icon(
+                        Icons.notification_important,
+                        color: Color(0xFF3572EF),
+                      ),
+                      title: Text(
+                          'Notification Title $index'
+                      ),
+                      subtitle: Text(
+                          'This is the detail of notification $index'
+                      ),
                       trailing: Text(
                           'Now',
                           style: TextStyle(
