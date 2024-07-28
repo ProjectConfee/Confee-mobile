@@ -62,12 +62,20 @@ class ParticipantDashboard extends StatelessWidget {
                           ),
                           onPressed: () {
                             // Navigate to notifications
+                            Navigator.pushReplacementNamed(context, '/notification');
+                            // Navigator.pushReplacementNamed(context, '/empty_notification');
                           },
                         ),
                         SizedBox(width: 10),
-                        CircleAvatar(
-                          radius: 30,
-                          backgroundImage: AssetImage('asset/images/profile.png'), // Replace with your profile image path
+                        GestureDetector(
+                          onTap: () {
+                            // Navigate to the profile page
+                            Navigator.pushReplacementNamed(context, '/profile');
+                          },
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage('assets/img/profile.png'), // Replace with your profile image path
+                          ),
                         ),
                       ],
                     ),
