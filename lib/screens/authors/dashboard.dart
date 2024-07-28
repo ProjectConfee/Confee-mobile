@@ -12,7 +12,11 @@ class ParticipantDashboard extends StatelessWidget {
               height: 130,
               color: Color(0xFF050C9B),
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
+              padding: EdgeInsets.only(
+                  left: 10.0,
+                  top: 20.0,
+                  right: 10.0
+              ),
               child: Stack(
                 children: [
                   Column(
@@ -124,7 +128,10 @@ class ParticipantDashboard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 20.0,
+                  vertical: 30.0
+              ),
               child: Column(
                 children: [
                   SizedBox(
