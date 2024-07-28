@@ -1,7 +1,8 @@
+import 'package:confee/screens/event/event_detail.dart';
+import 'package:confee/screens/event/resource.dart';
+import 'package:confee/screens/event/schedule.dart';
 import 'package:flutter/material.dart';
-import 'package:youtube_1/pages/event/event_detail.dart';
-import 'package:youtube_1/pages/event/resource.dart';
-import 'package:youtube_1/pages/event/schedule.dart';
+
 
 class ViewEvent extends StatelessWidget {
   const ViewEvent({super.key});
