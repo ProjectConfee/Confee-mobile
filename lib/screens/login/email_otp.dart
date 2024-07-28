@@ -33,7 +33,8 @@ class EmailOtp extends StatelessWidget {
       children: [
         Text(
           "Verification",
-          style: TextStyle(fontSize: 40,
+          style: TextStyle(
+              fontSize: 40,
               fontWeight: FontWeight.bold
           ),
         ),
@@ -41,14 +42,19 @@ class EmailOtp extends StatelessWidget {
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            style: TextStyle(fontSize: 20,
+            style: TextStyle(
+                fontSize: 20,
                 color: Colors.black
             ), // Default text style
             children: [
-              TextSpan(text: "Please enter the 6-digit OTP code sent to your "),
+              TextSpan(
+                  text: "Please enter the 6-digit OTP code sent to your "
+              ),
               TextSpan(
                 text: "Email",
-                style: TextStyle(fontWeight: FontWeight.bold), // Bold style for "email"
+                style: TextStyle(
+                    fontWeight: FontWeight.bold
+                ), // Bold style for "email"
               ),
               TextSpan(text: "."),
             ],
@@ -96,7 +102,8 @@ class EmailOtp extends StatelessWidget {
             },
             child: Text(
               "Next",
-              style: TextStyle(fontSize: 20,
+              style: TextStyle(
+                  fontSize: 20,
                   color: Colors.white
               ), // Text color is white
             ),
@@ -117,8 +124,14 @@ class EmailOtp extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Didn't receive the verification OTP?"),
-        TextButton(onPressed: () {}, child: Text("Resend OTP"))
+        Text(
+            "Didn't receive the verification OTP?"
+        ),
+        TextButton(onPressed: () {},
+            child: Text(
+                "Resend OTP"
+            )
+        )
       ],
     );
   }

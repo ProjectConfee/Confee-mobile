@@ -58,7 +58,11 @@ class ParticipantDashboard extends StatelessWidget {
                     child: Row(
                       children: [
                         IconButton(
-                          icon: Icon(Icons.notifications, color: Colors.white, size: 30),
+                          icon: Icon(
+                              Icons.notifications,
+                              color: Colors.white,
+                              size: 30
+                          ),
                           onPressed: () {
                             // Navigate to notifications
                           },

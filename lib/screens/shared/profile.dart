@@ -86,7 +86,10 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.person, color: Colors.black),
+                    child: Icon(
+                        Icons.person,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Column(
@@ -135,7 +138,10 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.email, color: Colors.black),
+                    child: Icon(
+                        Icons.email,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Column(
@@ -184,7 +190,10 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.person, color: Colors.black),
+                    child: Icon(
+                        Icons.person,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Column(
@@ -233,7 +242,10 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.person, color: Colors.black),
+                    child: Icon(
+                        Icons.person,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Column(
@@ -282,7 +294,10 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.person, color: Colors.black),
+                    child: Icon(
+                        Icons.person,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Column(
@@ -331,7 +346,10 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(Icons.person, color: Colors.black),
+                    child: Icon(
+                        Icons.person,
+                        color: Colors.black
+                    ),
                   ),
                   Expanded(
                     child: Column(

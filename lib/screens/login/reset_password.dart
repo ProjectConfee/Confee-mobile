@@ -32,7 +32,8 @@ class ResetPassword extends StatelessWidget {
       children: [
         Text(
           "Reset Password",
-          style: TextStyle(fontSize: 40,
+          style: TextStyle(
+              fontSize: 40,
               fontWeight: FontWeight.bold
           ),
         ),
@@ -40,7 +41,9 @@ class ResetPassword extends StatelessWidget {
         Text(
           "Your new password must be different from previous used password.",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(
+              fontSize: 20
+          ),
         ),
       ],
     );
@@ -71,7 +74,9 @@ class ResetPassword extends StatelessWidget {
                 .secondary
                 .withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(Icons.lock),
+            prefixIcon: Icon(
+                Icons.lock
+            ),
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
@@ -94,7 +99,9 @@ class ResetPassword extends StatelessWidget {
                 .secondary
                 .withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(Icons.lock),
+            prefixIcon: Icon(
+                Icons.lock
+            ),
           ),
           obscureText: true,
           validator: (value) {
@@ -112,7 +119,8 @@ class ResetPassword extends StatelessWidget {
               Navigator.pushReplacementNamed(context, '/password_changed');            },
             child: Text(
               "Next",
-              style: TextStyle(fontSize: 20,
+              style: TextStyle(
+                  fontSize: 20,
                   color: Colors.white
               ), // Text color is white
             ),

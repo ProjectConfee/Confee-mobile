@@ -32,7 +32,8 @@ class PasswordChanged extends StatelessWidget {
       children: [
         Text(
           "Password Updated",
-          style: TextStyle(fontSize: 40,
+          style: TextStyle(
+              fontSize: 40,
               fontWeight: FontWeight.bold
           ),
         ),
@@ -40,7 +41,9 @@ class PasswordChanged extends StatelessWidget {
         Text(
           "Your password has been updated.",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(
+              fontSize: 20
+          ),
         ),
       ],
     );
@@ -67,7 +70,8 @@ class PasswordChanged extends StatelessWidget {
             },
             child: Text(
               "Login",
-              style: TextStyle(fontSize: 20,
+              style: TextStyle(
+                  fontSize: 20,
                   color: Colors.white
               ), // Text color is white
             ),

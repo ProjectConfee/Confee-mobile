@@ -83,7 +83,12 @@ class NotificationPage extends StatelessWidget {
                       leading: Icon(Icons.notification_important, color: Color(0xFF3572EF),),
                       title: Text('Notification Title $index'),
                       subtitle: Text('This is the detail of notification $index'),
-                      trailing: Text('Now', style: TextStyle(color: Colors.grey)),
+                      trailing: Text(
+                          'Now',
+                          style: TextStyle(
+                              color: Colors.grey
+                          )
+                      ),
                     ),
                   );
                 },
