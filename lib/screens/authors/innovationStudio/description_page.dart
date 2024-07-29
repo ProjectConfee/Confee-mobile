@@ -72,11 +72,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-// import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import the ProfileViewPage
-// import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart';
-
-import 'custom_bottom_navigation_bar.dart';
-import 'profile_view.dart'; // Import CustomBottomNavigationBar
+import 'package:webview_flutter/webview_flutter.dart';
+import 'profile_view.dart';// Import the ProfileViewPage
+import 'custom_bottom_navigation_bar.dart'; // Import CustomBottomNavigationBar
 
 class DescriptionPage extends StatefulWidget {
   const DescriptionPage({Key? key}) : super(key: key);
@@ -105,6 +103,15 @@ class _DescriptionPageState extends State<DescriptionPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    // Initialize WebView
+    if (WebView.platform == SurfaceAndroidWebView()) {
+      WebView.platform = SurfaceAndroidWebView();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -121,28 +128,9 @@ class _DescriptionPageState extends State<DescriptionPage> {
         currentIndex: _currentIndex,
         onTap: _onBottomNavBarTapped,
       ),
-      body: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'These are ICTer 2024',
-                  style: TextStyle(fontSize: 24),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 20),
-                Text(
-                  'The International Conference on Advances in ICT for Emerging Regions (ICTer) is a prestigious gathering that continues the legacy of the International Information Technology Conference (IITC) held in Sri Lanka since 1998. Serving as a vital platform for global scholars, researchers, and practitioners, ICTer fosters collaboration and showcases cutting-edge advancements in information and communication technology. Through a rigorous peer-review process, high-quality papers are selected for presentation and publication with recognized publishers, driving both academic discourse and real-world impact. More than just a conference, ICTer cultivates a vibrant community where participants exchange ideas, forge partnerships, and collectively strive to address the challenges facing emerging regions. Committed to innovation, inclusivity, and excellence, ICTer invites all stakeholders to join in shaping a brighter future through the transformative power of ICT.',
-                  style: TextStyle(fontSize: 16),
-                  textAlign: TextAlign.justify,
-                ),
-              ],
-            ),
-          ),
-        ),
+      body: WebView(
+        initialUrl: 'https://icter.lk/',
+        javascriptMode: JavascriptMode.unrestricted,
       ),
     );
   }
