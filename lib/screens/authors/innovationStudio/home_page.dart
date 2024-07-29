@@ -687,7 +687,7 @@ class HomePage_Sponser extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage_Sponser> {
-  int _currentIndex = 0;
+  //int _currentIndex = 0;
 
   void _onBottomNavBarTapped(int index) {
     switch (index) {
@@ -769,9 +769,9 @@ class _HomePageState extends State<HomePage_Sponser> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF050C9B),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _onBottomNavBarTapped,
+      bottomNavigationBar: HomeBottomBar(
+        //currentIndex: _currentIndex,
+        //onTap: _onBottomNavBarTapped,
       ),
       body: SafeArea(
         child: Column(

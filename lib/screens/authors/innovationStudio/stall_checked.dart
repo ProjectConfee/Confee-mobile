@@ -190,7 +190,7 @@ class StallCheckedPage extends StatefulWidget {
 }
 
 class _StallCheckedPageState extends State<StallCheckedPage> {
-  int _currentIndex = 0; // Default to Home tab
+ // int _currentIndex = 0; // Default to Home tab
   // Create a map to store the visited status of each stall
   Map<int, bool> _visitedStalls = {};
 
@@ -205,7 +205,7 @@ class _StallCheckedPageState extends State<StallCheckedPage> {
 
   void _onTap(int index) {
     setState(() {
-      _currentIndex = index;
+      //_currentIndex = index;
     });
 
     switch (index) {
@@ -269,9 +269,9 @@ class _StallCheckedPageState extends State<StallCheckedPage> {
           
         ],
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _onTap,
+      bottomNavigationBar: HomeBottomBar(
+       // currentIndex: _currentIndex,
+        //onTap: _onTap,
       ),
     );
   }

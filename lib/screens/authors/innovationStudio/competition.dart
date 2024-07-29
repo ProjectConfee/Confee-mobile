@@ -174,7 +174,7 @@ class CompetitionPage extends StatefulWidget {
 }
 
 class _CompetitionPageState extends State<CompetitionPage> {
-  int _currentIndex = 0;
+  //int _currentIndex = 0;
 
   void _onBottomNavBarTapped(int index) {
     switch (index) {
@@ -215,9 +215,7 @@ class _CompetitionPageState extends State<CompetitionPage> {
         initialUrl: 'https://icter.lk/i-am-a-researcher/',
         javascriptMode: JavascriptMode.unrestricted,
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _onBottomNavBarTapped,
+      bottomNavigationBar: HomeBottomBar(
       ),
     );
   }
