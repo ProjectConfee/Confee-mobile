@@ -131,13 +131,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-
-import 'custom_bottom_navigation_bar.dart';
-import 'home_page.dart';
-import 'profile_view.dart';
-// import '../../../../screens/sponsers/home_page.dart'; // Import your home page file
-// import '../../../../screens/sponsers/profile_view.dart'; // Import ProfileViewPage
-// import '../../sponsers/custom_bottom_navigation_bar.dart'; // Import the CustomBottomNavigationBar
+import 'home_page.dart'; // Import your home page file
+import 'profile_view.dart'; // Import ProfileViewPage
+import 'custom_bottom_navigation_bar.dart'; // Import the CustomBottomNavigationBar
 
 class StallMapPage extends StatefulWidget {
   const StallMapPage({Key? key}) : super(key: key);
@@ -223,8 +219,8 @@ class _StallMapPageState extends State<StallMapPage> {
 
   Widget _buildFloorPlan(int floor) {
     List<Widget> rows = [];
-    int shopNumber = (floor - 1) * 13 + 1;
-    for (int i = 0; i < 4; i++) {
+    int shopNumber = (floor - 1) * 6 + 1;
+    for (int i = 0; i < 2; i++) {
       List<Widget> rowShops = [];
       for (int j = 0; j < 3; j++) {
         if (shopNumber <= floor * 13) {
@@ -253,7 +249,7 @@ class _StallMapPageState extends State<StallMapPage> {
         ),
         child: Center(
           child: Text(
-            'Shop $number',
+            'Stall $number',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ),
@@ -263,8 +259,8 @@ class _StallMapPageState extends State<StallMapPage> {
 
   Widget _buildShopNames() {
     List<Widget> shopNames = [];
-    for (int i = 1; i <= 25; i++) {
-      shopNames.add(Text('Shop $i: Name of Shop $i'));
+    for (int i = 1; i <= 12; i++) {
+      shopNames.add(Text('Stall $i: Name of Shop $i'));
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
