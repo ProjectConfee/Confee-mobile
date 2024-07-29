@@ -384,7 +384,8 @@ class _SampleCardWithProfile extends StatelessWidget {
                               const SizedBox(width: 28),
                               ElevatedButton(
                                 onPressed: () {
-                                  // Handle Accept action
+                                  Navigator.pushReplacementNamed(context, '/chat');
+
                                 },
                                 style: ElevatedButton.styleFrom(
                                   foregroundColor: Colors.blue[800],
@@ -394,7 +395,7 @@ class _SampleCardWithProfile extends StatelessWidget {
                               const SizedBox(width: 8),
                               ElevatedButton(
                                 onPressed: () {
-                                  // Handle Decline action
+                                  Navigator.pushReplacementNamed(context, '/speaker-feedback');
                                 },
                                 style: ElevatedButton.styleFrom(
                                   foregroundColor: Colors.blue[800],
