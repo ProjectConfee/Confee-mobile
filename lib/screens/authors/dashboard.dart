@@ -79,7 +79,7 @@ class ParticipantDashboard extends StatelessWidget {
                           },
                           child: CircleAvatar(
                             radius: 30,
-                            backgroundImage: AssetImage('assets/img/profile.png'), // Replace with your profile image path
+                            backgroundImage: AssetImage('asset/images/profile.png'), // Replace with your profile image path
                           ),
                         ),
                       ],
