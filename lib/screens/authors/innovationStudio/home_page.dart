@@ -768,7 +768,7 @@ class _HomePageState extends State<HomePage_Sponser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[800],
+      backgroundColor: Color(0xFF050C9B),
       bottomNavigationBar: CustomBottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: _onBottomNavBarTapped,
@@ -795,13 +795,7 @@ class _HomePageState extends State<HomePage_Sponser> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(height: 8),
-                          Text(
-                            '28 Jun, 2023',
-                            style: TextStyle(
-                              color: Colors.blue[200],
-                            ),
-                          ),
+                          
                         ],
                       ),
                       // Notification
@@ -810,10 +804,7 @@ class _HomePageState extends State<HomePage_Sponser> {
                           _navigateToNotificationPage(context);
                         },
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.blue[600],
-                            borderRadius: BorderRadius.circular(12),
-                          ),
+                         
                           padding: EdgeInsets.all(12),
                           child: Icon(
                             Icons.notifications,
@@ -823,42 +814,37 @@ class _HomePageState extends State<HomePage_Sponser> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 25),
+                  SizedBox(height:10),
                   // Search bar
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 223, 234, 245),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    padding: EdgeInsets.only(left: 15, top: 1, bottom: 1),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.search,
-                          color: const Color.fromARGB(255, 0, 0, 0),
-                        ),
-                        SizedBox(width: 15),
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () {
-                              _navigateToCompetitionPage(context); // Navigate to CompetitionPage on search icon tap
-                            },
-                            child: TextField(
-                              style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
-                              decoration: InputDecoration(
-                                hintText: 'Search',
-                                hintStyle: TextStyle(color: const Color.fromARGB(255, 6, 6, 6)),
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   decoration: BoxDecoration(
+                  //     color: Color.fromARGB(255, 223, 234, 245),
+                  //     borderRadius: BorderRadius.circular(12),
+                  //   ),
+                  //   padding: EdgeInsets.only(left: 15, top: 1, bottom: 1),
+                    
+        
+                  // ),
                   SizedBox(height: 35),
                   // Four different faces
-                  Row(
+                 
+                  
+                ],
+              ),
+            ),
+            SizedBox(height: 12),
+            
+            Expanded(
+                
+              child: Container(
+                  
+                padding: EdgeInsets.all(25),
+                color: Color.fromARGB(255, 228, 225, 225),
+                child: Column(
+                  
+                  children: [
+                      SizedBox(height: 32),
+                    Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       // Stall Map
@@ -872,7 +858,7 @@ class _HomePageState extends State<HomePage_Sponser> {
                             SizedBox(height: 8),
                             Text(
                               'Stall Map',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -888,7 +874,7 @@ class _HomePageState extends State<HomePage_Sponser> {
                             SizedBox(height: 8),
                             Text(
                               'Resources',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -904,42 +890,15 @@ class _HomePageState extends State<HomePage_Sponser> {
                             SizedBox(height: 8),
                             Text(
                               'Description',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
                       ),
-                      // QR Scan
-                      // GestureDetector(
-                      //   onTap: () {
-                      //     _navigateToQRScanPage(context); // Navigate to QRScanPage
-                      //   },
-                      //   child: Column(
-                      //     children: [
-                      //       EmoticonFace(
-                      //         icon: Icons.qr_code, // QR code icon
-                      //       ),
-                      //       SizedBox(height: 8),
-                      //       Text(
-                      //         'QR Scan',
-                      //         style: TextStyle(color: Colors.white),
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
+                     
                     ],
                   ),
-                  SizedBox(height: 25),
-                ],
-              ),
-            ),
-            SizedBox(height: 12),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.all(25),
-                color: Colors.grey[300],
-                child: Column(
-                  children: [
+                   SizedBox(height: 72),
                     // Exercise heading
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

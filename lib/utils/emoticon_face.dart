@@ -29,7 +29,7 @@ class EmoticonFace extends StatelessWidget {
         children: [
           Icon(
             icon,
-            color: Color.fromARGB(255, 94, 93, 93),
+            color: Color.fromARGB(255, 0, 0, 0),
             size: 30,
           ),
           SizedBox(height: 8),

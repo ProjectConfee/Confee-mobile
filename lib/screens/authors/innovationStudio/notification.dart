@@ -5,7 +5,7 @@
 
 // class NotificationPage extends StatelessWidget {
 //   const NotificationPage({Key? key}) : super(key: key);
-
+//bu
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
@@ -140,7 +140,7 @@ class _NotificationPageState extends State<NotificationPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Notifications'),
-        backgroundColor: Colors.blue[800], // Set the app bar color
+        backgroundColor: Color.fromARGB(255, 26, 10, 154), // Set the app bar color
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
