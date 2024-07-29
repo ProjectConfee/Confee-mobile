@@ -208,8 +208,8 @@ class _CompetitionPageState extends State<CompetitionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Competition'),
-        backgroundColor: Colors.blue[800],
+        title: Text('Competition',style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF050C9B),
       ),
       body: WebView(
         initialUrl: 'https://icter.lk/i-am-a-researcher/',

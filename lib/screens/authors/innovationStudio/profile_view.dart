@@ -169,7 +169,7 @@ class _ProfileViewPageState extends State<ProfileViewPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Color(0xFF050C9B),
       ),
       body: Center(
         child: Padding(

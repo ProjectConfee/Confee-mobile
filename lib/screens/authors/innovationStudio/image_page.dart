@@ -581,16 +581,16 @@ class _ImagePageState extends State<ImagePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Images'),
-        backgroundColor: Colors.blue[800],
+        title: Text('Images',style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF050C9B),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back,color: Colors.white,),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
       ),
-      backgroundColor: Colors.blue[800],
+      backgroundColor: Color(0xFF050C9B),
       bottomNavigationBar: CustomBottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: _onBottomNavBarTapped,

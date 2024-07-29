@@ -297,16 +297,16 @@ class _ResourcePageState extends State<ResourcePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Resources'),
-        backgroundColor: Colors.blue[800],  // Set the app bar color
+        title: Text('Resources',style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF050C9B),  // Set the app bar color
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back,color: Colors.white,),
           onPressed: () {
             Navigator.pop(context); // Navigate back when arrow back is pressed
           },
         ),
       ),
-      backgroundColor: Colors.blue[800],
+      backgroundColor:Color(0xFF050C9B),
       bottomNavigationBar: CustomBottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: _onTap,

@@ -140,7 +140,7 @@ class _NotificationPageState extends State<NotificationPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Notifications'),
-        backgroundColor: Color.fromARGB(255, 26, 10, 154), // Set the app bar color
+        backgroundColor: Color(0xFF050C9B), // Set the app bar color
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {

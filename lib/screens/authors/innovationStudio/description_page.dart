@@ -115,8 +115,8 @@ class _DescriptionPageState extends State<DescriptionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Description'),
-        backgroundColor: Color.fromARGB(255, 7, 14, 145), // Set the app bar color
+        title: Text('Description',style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF050C9B), // Set the app bar color
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {

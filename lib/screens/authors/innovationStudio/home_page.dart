@@ -847,22 +847,26 @@ class _HomePageState extends State<HomePage_Sponser> {
                     Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      // Stall Map
-                      GestureDetector(
-                        onTap: () {
-                          _navigateToStallMapPage(context);
-                        },
-                        child: Column(
-                          children: [
-                            EmoticonFace(icon: Icons.map),
-                            SizedBox(height: 8),
-                            Text(
-                              'Stall Map',
-                              style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
+                     GestureDetector(
+  onTap: () {
+    _navigateToStallMapPage(context);
+  },
+  child: Column(
+    children: [
+      EmoticonFace(
+        imagePath: 'asset/images/start.png', // Update to use your image path
+      ),
+      SizedBox(height: 8),
+      Text(
+        'Stall Map',
+        style: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ],
+  ),
+),
                       // Resources
                       GestureDetector(
                         onTap: () {
@@ -870,7 +874,10 @@ class _HomePageState extends State<HomePage_Sponser> {
                         },
                         child: Column(
                           children: [
-                            EmoticonFace(icon: Icons.business),
+                            EmoticonFace(
+        imagePath: 'asset/images/pre_conference.png', // Update to use your image path
+      ),
+                            
                             SizedBox(height: 8),
                             Text(
                               'Resources',
@@ -886,7 +893,10 @@ class _HomePageState extends State<HomePage_Sponser> {
                         },
                         child: Column(
                           children: [
-                            EmoticonFace(icon: Icons.help),
+                            EmoticonFace(
+        imagePath: 'asset/images/post_conference.png', // Update to use your image path
+      ),
+                            
                             SizedBox(height: 8),
                             Text(
                               'Description',

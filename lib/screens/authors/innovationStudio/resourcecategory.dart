@@ -1738,10 +1738,10 @@ class _ResourceCategoryPageState extends State<ResourceCategoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Resource Category'),
-        backgroundColor: Colors.blue[800],
+        title: Text('Resource Category',style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF050C9B),
       ),
-      backgroundColor: Colors.blue[800],
+      backgroundColor: Color(0xFF050C9B),
       bottomNavigationBar: CustomBottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: _onTap,

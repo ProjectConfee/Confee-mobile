@@ -82,8 +82,8 @@ class _ViewLinkPageState extends State<ViewLinkPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('View Link'),
-        backgroundColor: Colors.blue[800],
+        title: Text('View Link',style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF050C9B),
       ),
       body: Container(
         padding: EdgeInsets.all(20),

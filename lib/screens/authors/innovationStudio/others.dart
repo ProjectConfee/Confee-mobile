@@ -199,8 +199,8 @@ class OthersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Others'),
-        backgroundColor: Colors.blue[800],
+        title: Text('Others',style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF050C9B),
       ),
       backgroundColor: const Color.fromARGB(255, 250, 253, 255),
       body: SafeArea(

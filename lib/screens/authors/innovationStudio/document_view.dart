@@ -427,8 +427,8 @@ class _DocumentViewPageState extends State<DocumentViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Document View'),
-        backgroundColor: Colors.blue[800],
+        title: Text('Document View',style: TextStyle(color: Colors.white)),
+        backgroundColor:  Color(0xFF050C9B),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
