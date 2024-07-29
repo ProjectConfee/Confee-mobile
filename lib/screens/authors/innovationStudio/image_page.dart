@@ -260,14 +260,272 @@
 
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/material.dart';
-// import 'package:youtube_1/screens/sponsers/home_page.dart'; // Import the HomePage
-// import 'package:youtube_1/screens/sponsers/profile_view.dart'; // Import ProfilePage
-// import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart';
+// import 'package:flutter/material.dart';
+// import 'package:youtube_1/pages/participant/innovation/home_page.dart'; // Import the HomePage
+// import 'package:youtube_1/pages/participant/innovation/profile_view.dart'; // Import ProfilePage
+// import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Import CustomBottomNavigationBar
 
-import 'custom_bottom_navigation_bar.dart';
-import 'home_page.dart';
-import 'profile_view.dart'; // Import CustomBottomNavigationBar
+// class ImagePage extends StatefulWidget {
+//   @override
+//   _ImagePageState createState() => _ImagePageState();
+// }
+
+// class _ImagePageState extends State<ImagePage> {
+//   int _currentIndex = 0;
+
+//   void _onBottomNavBarTapped(int index) {
+//     setState(() {
+//       _currentIndex = index;
+//     });
+
+//     if (index == 0) {
+//       Navigator.pushAndRemoveUntil(
+//         context,
+//         MaterialPageRoute(builder: (context) => HomePage()),
+//         (Route<dynamic> route) => false,
+//       );
+//     } else if (index == 2) {
+//       Navigator.push(
+//         context,
+//         MaterialPageRoute(builder: (context) => ProfileViewPage()),
+//       );
+//     }
+//     // Handle other cases if necessary
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Images'),
+//         backgroundColor: Colors.blue[800],
+//         leading: IconButton(
+//           icon: Icon(Icons.arrow_back),
+//           onPressed: () {
+//             Navigator.pop(context);
+//           },
+//         ),
+//       ),
+//       backgroundColor: Colors.blue[800],
+//       bottomNavigationBar: CustomBottomNavigationBar(
+//         currentIndex: _currentIndex,
+//         onTap: _onBottomNavBarTapped,
+//       ),
+//       body: SafeArea(
+//         child: Column(
+//           children: [
+//             Padding(
+//               padding: const EdgeInsets.symmetric(horizontal: 25.0),
+//               child: Column(
+//                 children: [
+//                   SizedBox(height: 0),
+//                   Container(
+//                     padding: EdgeInsets.all(12),
+//                     child: Row(
+//                       children: [],
+//                     ),
+//                   ),
+//                   SizedBox(height: 11),
+//                   Row(
+//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                     children: [],
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             Expanded(
+//               child: Container(
+//                 padding: EdgeInsets.all(25),
+//                 color: Colors.grey[300],
+//                 child: Column(
+//                   children: [
+//                     SizedBox(height: 20),
+//                     Expanded(
+//                       child: GridView.count(
+//                         crossAxisCount: 2,
+//                         crossAxisSpacing: 10,
+//                         mainAxisSpacing: 10,
+//                         children: [
+//                           Image.asset('asset/images/download.png', fit: BoxFit.cover),
+//                           Image.asset('asset/images/v.png', fit: BoxFit.cover),
+//                           Image.asset('asset/images/vv.png', fit: BoxFit.cover),
+//                           Image.asset('asset/images/R.png', fit: BoxFit.cover),
+//                           Image.asset('asset/images/download.png', fit: BoxFit.cover),
+//                           Image.asset('asset/images/download.png', fit: BoxFit.cover),
+//                           Image.asset('asset/images/v.png', fit: BoxFit.cover),
+//                           Image.asset('asset/images/vv.png', fit: BoxFit.cover),
+//                           Image.asset('asset/images/R.png', fit: BoxFit.cover),
+//                           Image.asset('asset/images/download.png', fit: BoxFit.cover),
+//                         ],
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+//add full screen option 
+// import 'package:flutter/material.dart';
+// import 'package:youtube_1/pages/participant/innovation/home_page.dart'; // Import the HomePage
+// import 'package:youtube_1/pages/participant/innovation/profile_view.dart'; // Import ProfilePage
+// import 'package:youtube_1/pages/participant/innovation/custom_bottom_navigation_bar.dart'; // Import CustomBottomNavigationBar
+
+// class ImagePage extends StatefulWidget {
+//   @override
+//   _ImagePageState createState() => _ImagePageState();
+// }
+
+// class _ImagePageState extends State<ImagePage> {
+//   int _currentIndex = 0;
+
+//   void _onBottomNavBarTapped(int index) {
+//     setState(() {
+//       _currentIndex = index;
+//     });
+
+//     if (index == 0) {
+//       Navigator.pushAndRemoveUntil(
+//         context,
+//         MaterialPageRoute(builder: (context) => HomePage()),
+//         (Route<dynamic> route) => false,
+//       );
+//     } else if (index == 2) {
+//       Navigator.push(
+//         context,
+//         MaterialPageRoute(builder: (context) => ProfileViewPage()),
+//       );
+//     }
+//     // Handle other cases if necessary
+//   }
+
+//   void _openFullScreenImage(String imagePath) {
+//     Navigator.push(
+//       context,
+//       MaterialPageRoute(
+//         builder: (context) => FullScreenImagePage(imagePath: imagePath),
+//       ),
+//     );
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Images'),
+//         backgroundColor: Colors.blue[800],
+//         leading: IconButton(
+//           icon: Icon(Icons.arrow_back),
+//           onPressed: () {
+//             Navigator.pop(context);
+//           },
+//         ),
+//       ),
+//       backgroundColor: Colors.blue[800],
+//       bottomNavigationBar: CustomBottomNavigationBar(
+//         currentIndex: _currentIndex,
+//         onTap: _onBottomNavBarTapped,
+//       ),
+//       body: SafeArea(
+//         child: Column(
+//           children: [
+//             Padding(
+//               padding: const EdgeInsets.symmetric(horizontal: 25.0),
+//               child: Column(
+//                 children: [
+//                   SizedBox(height: 0),
+//                   Container(
+//                     padding: EdgeInsets.all(12),
+//                     child: Row(
+//                       children: [],
+//                     ),
+//                   ),
+//                   SizedBox(height: 11),
+//                   Row(
+//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                     children: [],
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             Expanded(
+//               child: Container(
+//                 padding: EdgeInsets.all(25),
+//                 color: Colors.grey[300],
+//                 child: Column(
+//                   children: [
+//                     SizedBox(height: 20),
+//                     Expanded(
+//                       child: GridView.count(
+//                         crossAxisCount: 2,
+//                         crossAxisSpacing: 10,
+//                         mainAxisSpacing: 10,
+//                         children: [
+//                           _buildImageItem('asset/images/download.png'),
+//                           _buildImageItem('asset/images/v.png'),
+//                           _buildImageItem('asset/images/vv.png'),
+//                           _buildImageItem('asset/images/R.png'),
+//                           _buildImageItem('asset/images/download.png'),
+//                           _buildImageItem('asset/images/download.png'),
+//                           _buildImageItem('asset/images/v.png'),
+//                           _buildImageItem('asset/images/vv.png'),
+//                           _buildImageItem('asset/images/R.png'),
+//                           _buildImageItem('asset/images/download.png'),
+//                         ],
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+//   Widget _buildImageItem(String imagePath) {
+//     return GestureDetector(
+//       onTap: () => _openFullScreenImage(imagePath),
+//       child: Image.asset(imagePath, fit: BoxFit.cover),
+//     );
+//   }
+// }
+
+// class FullScreenImagePage extends StatelessWidget {
+//   final String imagePath;
+
+//   const FullScreenImagePage({required this.imagePath});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.black,
+//       appBar: AppBar(
+//         backgroundColor: Colors.black,
+//         leading: IconButton(
+//           icon: Icon(Icons.arrow_back, color: Colors.white),
+//           onPressed: () {
+//             Navigator.pop(context);
+//           },
+//         ),
+//       ),
+//       body: Center(
+//         child: Image.asset(imagePath, fit: BoxFit.contain),
+//       ),
+//     );
+//   }
+// }
+//add feature
+import 'package:flutter/material.dart';
+import 'home_page.dart'; // Import the HomePage
+import 'profile_view.dart'; // Import ProfilePage
+import 'custom_bottom_navigation_bar.dart'; // Import CustomBottomNavigationBar
 
 class ImagePage extends StatefulWidget {
   @override
@@ -276,6 +534,19 @@ class ImagePage extends StatefulWidget {
 
 class _ImagePageState extends State<ImagePage> {
   int _currentIndex = 0;
+
+  final List<String> images = [
+    'asset/images/download.png',
+    'asset/images/v.png',
+    'asset/images/vv.png',
+    'asset/images/R.png',
+    'asset/images/download.png',
+    'asset/images/download.png',
+    'asset/images/v.png',
+    'asset/images/vv.png',
+    'asset/images/R.png',
+    'asset/images/download.png',
+  ];
 
   void _onBottomNavBarTapped(int index) {
     setState(() {
@@ -295,6 +566,15 @@ class _ImagePageState extends State<ImagePage> {
       );
     }
     // Handle other cases if necessary
+  }
+
+  void _openFullScreenImage(int initialIndex) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FullScreenImagePage(images: images, initialIndex: initialIndex),
+      ),
+    );
   }
 
   @override
@@ -345,17 +625,19 @@ class _ImagePageState extends State<ImagePage> {
                   children: [
                     SizedBox(height: 20),
                     Expanded(
-                      child: GridView.count(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                        children: [
-                          Image.asset('asset/images/download.png', fit: BoxFit.cover),
-                          Image.asset('asset/images/v.png', fit: BoxFit.cover),
-                          Image.asset('asset/images/vv.png', fit: BoxFit.cover),
-                          Image.asset('asset/images/R.png', fit: BoxFit.cover),
-                          Image.asset('asset/images/download.png', fit: BoxFit.cover),
-                        ],
+                      child: GridView.builder(
+                        itemCount: images.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                        ),
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () => _openFullScreenImage(index),
+                            child: Image.asset(images[index], fit: BoxFit.cover),
+                          );
+                        },
                       ),
                     ),
                   ],
@@ -364,6 +646,51 @@ class _ImagePageState extends State<ImagePage> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class FullScreenImagePage extends StatefulWidget {
+  final List<String> images;
+  final int initialIndex;
+
+  FullScreenImagePage({required this.images, required this.initialIndex});
+
+  @override
+  _FullScreenImagePageState createState() => _FullScreenImagePageState();
+}
+
+class _FullScreenImagePageState extends State<FullScreenImagePage> {
+  late PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: widget.initialIndex);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: PageView.builder(
+        controller: _pageController,
+        itemCount: widget.images.length,
+        itemBuilder: (context, index) {
+          return Center(
+            child: Image.asset(widget.images[index], fit: BoxFit.contain),
+          );
+        },
       ),
     );
   }
