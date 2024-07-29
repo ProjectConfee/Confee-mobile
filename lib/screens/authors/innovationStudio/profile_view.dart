@@ -142,7 +142,7 @@ import 'package:flutter/material.dart';
 //import 'package_page.dart';
 // import '../../pages/participant/innovation/custom_bottom_navigation_bar.dart';
 import 'custom_bottom_navigation_bar.dart';
-import 'home_page.dart';
+//import 'home_page.dart';
 
 class ProfileViewPage extends StatefulWidget {
   const ProfileViewPage({Key? key}) : super(key: key);
@@ -162,7 +162,7 @@ class _ProfileViewPageState extends State<ProfileViewPage> {
   TextEditingController _genderController = TextEditingController(text: 'Male');
   TextEditingController _phoneNumberController = TextEditingController(text: '123-456-7890');
 
-  int _currentIndex = 2; // Default to Profile tab
+  //int _currentIndex = 2; // Default to Profile tab
 
   @override
   Widget build(BuildContext context) {
@@ -225,30 +225,10 @@ class _ProfileViewPageState extends State<ProfileViewPage> {
           ),
         ),
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-          switch (index) {
-            case 0:
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => HomePage_Sponser()),
-              );
-              break;
-            // case 1:
-            //   Navigator.pushReplacement(
-            //     context,
-            //     MaterialPageRoute(builder: (context) => PackagesPage()),
-            //   );
-              
-            case 2:
-              // Current page is the profile page, no need to navigate
-              break;
-          }
-        },
+      bottomNavigationBar: HomeBottomBar(
+        //currentIndex: _currentIndex,
+        //onTap: (index) {
+        
       ),
     );
   }

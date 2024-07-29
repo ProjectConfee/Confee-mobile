@@ -115,11 +115,11 @@ class NotificationPage extends StatefulWidget {
 }
 
 class _NotificationPageState extends State<NotificationPage> {
-  int _currentIndex = 0; // Default to Home tab
+  //int _currentIndex = 0; // Default to Home tab
 
   void _onTap(int index) {
     setState(() {
-      _currentIndex = index;
+     // _currentIndex = index;
     });
 
     switch (index) {
@@ -148,9 +148,9 @@ class _NotificationPageState extends State<NotificationPage> {
           },
         ),
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _onTap,
+      bottomNavigationBar: HomeBottomBar(
+        //currentIndex: _currentIndex,
+        //onTap: _onTap,
       ),
       body: SafeArea(
         child: Padding(

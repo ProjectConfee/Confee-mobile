@@ -533,7 +533,7 @@ class ImagePage extends StatefulWidget {
 }
 
 class _ImagePageState extends State<ImagePage> {
-  int _currentIndex = 0;
+  //int _currentIndex = 0;
 
   final List<String> images = [
     'asset/images/download.png',
@@ -550,7 +550,7 @@ class _ImagePageState extends State<ImagePage> {
 
   void _onBottomNavBarTapped(int index) {
     setState(() {
-      _currentIndex = index;
+      //_currentIndex = index;
     });
 
     if (index == 0) {
@@ -591,9 +591,9 @@ class _ImagePageState extends State<ImagePage> {
         ),
       ),
       backgroundColor: Color(0xFF050C9B),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _onBottomNavBarTapped,
+      bottomNavigationBar: HomeBottomBar(
+        //currentIndex: _currentIndex,
+        //onTap: _onBottomNavBarTapped,
       ),
       body: SafeArea(
         child: Column(

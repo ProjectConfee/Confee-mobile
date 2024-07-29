@@ -143,11 +143,11 @@ class StallMapPage extends StatefulWidget {
 }
 
 class _StallMapPageState extends State<StallMapPage> {
-  int _currentIndex = 1; // Default to Packages tab
+ // int _currentIndex = 1; // Default to Packages tab
 
   void _onTap(int index) {
     setState(() {
-      _currentIndex = index;
+      //_currentIndex = index;
     });
 
     switch (index) {
@@ -210,9 +210,9 @@ class _StallMapPageState extends State<StallMapPage> {
           ],
         ),
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _onTap,
+      bottomNavigationBar: HomeBottomBar(
+        //currentIndex: _currentIndex,
+        //onTap: _onTap,
       ),
     );
   }

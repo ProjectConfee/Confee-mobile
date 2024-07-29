@@ -327,11 +327,11 @@ class VideoViewPage extends StatefulWidget {
 }
 
 class _VideoViewPageState extends State<VideoViewPage> {
-  int _currentIndex = 1; // Default to Packages tab
+  //int _currentIndex = 1; // Default to Packages tab
 
   void _onTap(int index) {
     setState(() {
-      _currentIndex = index;
+      //_currentIndex = index;
     });
 
     switch (index) {
@@ -359,9 +359,9 @@ class _VideoViewPageState extends State<VideoViewPage> {
         backgroundColor: Color(0xFF050C9B),
       ),
       backgroundColor:  Color(0xFF050C9B),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _onTap,
+      bottomNavigationBar:HomeBottomBar(
+       // currentIndex: _currentIndex,
+        //onTap: _onTap,
       ),
       body: SafeArea(
         child: Container(

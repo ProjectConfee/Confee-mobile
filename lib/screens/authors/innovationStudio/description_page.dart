@@ -84,11 +84,11 @@ class DescriptionPage extends StatefulWidget {
 }
 
 class _DescriptionPageState extends State<DescriptionPage> {
-  int _currentIndex = 0;
+  //int _currentIndex = 0;
 
   void _onBottomNavBarTapped(int index) {
     setState(() {
-      _currentIndex = index;
+      //_currentIndex = index;
     });
 
     if (index == 0) {
@@ -124,9 +124,9 @@ class _DescriptionPageState extends State<DescriptionPage> {
           },
         ),
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _onBottomNavBarTapped,
+      bottomNavigationBar: HomeBottomBar(
+       // currentIndex: _currentIndex,
+        //onTap: _onBottomNavBarTapped,
       ),
       body: WebView(
         initialUrl: 'https://icter.lk/',
