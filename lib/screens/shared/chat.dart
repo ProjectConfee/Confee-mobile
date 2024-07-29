@@ -47,14 +47,31 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Chat",
-          style: TextStyle(
-            fontSize: 32.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
         backgroundColor: Color(0xFF050C9B),
+        title: Row(
+          children: [
+            GestureDetector(
+              onTap:(){
+                Navigator.pushReplacementNamed(context, '/schedule');
+              },
+              child: Icon(
+
+                size: 30,
+                Icons.arrow_back,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(width: 8), // Adjust spacing between icon and text
+            Text(
+              "Chat",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 32.0,
+                fontWeight: FontWeight.w300,
+              ),
+            ),
+          ],
+        ),
       ),
       body: Column(
         children: [

@@ -8,10 +8,12 @@ import 'screens/authors/edit_profile.dart';
 import 'screens/authors/innovationStudio/home_page.dart';
 import 'screens/authors/qrcode.dart';
 import 'screens/event/not_register_event.dart';
+import 'screens/event/schedule.dart';
 import 'screens/event/select_scan.dart';
 import 'screens/event/view_event.dart';
 import 'screens/notifications/empty_notification.dart';
 import 'screens/oc/oc_dashboard.dart';
+import 'screens/shared/chat.dart';
 import 'screens/shared/profile.dart';
 import 'screens/login/forgot_password.dart';
 import 'screens/login/email_otp.dart';
@@ -55,11 +57,15 @@ class MyApp extends StatelessWidget {
         '/editProfile': (context) => EditProfileScreen(),
         '/notification': (context) => NotificationPage(),
         '/empty_notification': (context) => EmptyNotification(),
+        '/speaker-feedback': (context) => Feedbacks(),
+        '/chat': (context) => ChatScreen(),
 
 
-        // ### Event ###
+
+    // ### Event ###
 
         '/View_Event': (context) => ViewEvent(),
+        '/schedule': (context) => Schedule(),
         '/no_registered_event': (context) => NotRegisterEvent(),
 
 

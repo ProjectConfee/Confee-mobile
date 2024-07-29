@@ -142,9 +142,14 @@ class _FeedbacksState extends State<Feedbacks> {
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
+                          GestureDetector(
+                              onTap:(){
+                                Navigator.pushReplacementNamed(context, '/schedule');
+                              },
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                            ),
                           ),
                           SizedBox(width: 10),
                           Text(
