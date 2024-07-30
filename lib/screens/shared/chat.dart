@@ -51,13 +51,12 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Row(
           children: [
             GestureDetector(
-              onTap:(){
-                Navigator.pushReplacementNamed(context, '/schedule');
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/View_Event');
               },
               child: Icon(
-
-                size: 30,
                 Icons.arrow_back,
+                size: 30,
                 color: Colors.white,
               ),
             ),
@@ -71,7 +70,8 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
           ],
-        ),
+        )
+
       ),
       body: Column(
         children: [

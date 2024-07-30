@@ -44,9 +44,9 @@ class ViewEvent extends StatelessWidget {
             ),
             leading: IconButton(
               icon: const Icon(Icons.arrow_back, color: Colors.black, size: 28.0),
-              onPressed: () {
-                Navigator.pop(context); // Navigate back when arrow back is pressed
-              },
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/participant_dashboard'); // Navigate to home when arrow back is pressed
+                },
             ),
           ),
           body: const TabBarView(

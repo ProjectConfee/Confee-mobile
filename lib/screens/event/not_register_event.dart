@@ -20,7 +20,7 @@ class NotRegisterEvent extends StatelessWidget {
             leading: IconButton(
               icon: const Icon(Icons.arrow_back,color: Colors.black,size: 28.0,),
               onPressed: () {
-                Navigator.pop(context); // Navigate back when arrow back is pressed
+                Navigator.pushReplacementNamed(context, '/participant_dashboard'); // Navigate back when arrow back is pressed
               },
             ),
           ),
