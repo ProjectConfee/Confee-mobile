@@ -86,16 +86,10 @@ class HomeBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15),
-      height: 80,
+      height: 60,
       decoration: BoxDecoration(
-        color: Color(0xFFD9D9D9).withOpacity(0.4),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.white,
-            spreadRadius: 1,
-            blurRadius: 8,
-          ),
-        ],
+        color: Color(0xFFD9D9D9),
+        
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,8 +98,10 @@ class HomeBottomBar extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20.0), // Add left margin
             child: _BottomBarItem(
               icon: Icons.home_outlined,
+              
               label: "Home",
               onTap: () {
+                
                 Navigator.pushReplacementNamed(context, '/participant_dashboard');
               },
             ),
@@ -154,9 +150,9 @@ class _BottomBarItem extends StatelessWidget {
           Icon(
             icon,
             color: Colors.black,
-            size: 35,
+            size: 25,
           ),
-          SizedBox(height: 4),
+          SizedBox(height: 1),
           Text(
             label,
             style: TextStyle(
