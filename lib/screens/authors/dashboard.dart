@@ -147,7 +147,7 @@ class ParticipantDashboard extends StatelessWidget {
                             leading: Image.asset(
                               'asset/images/stall1.png', // Replace with your image path
                               width: 150.0,
-                              height: 150.0,
+                              height: 200.0,
                               fit: BoxFit.cover,
                             ),
                             title: Center(
@@ -156,12 +156,12 @@ class ParticipantDashboard extends StatelessWidget {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 28.0,
+                                  fontSize: 20.0,
                                 ),
                               ),
                             ),
                             subtitle: Text(
-                              'View details',
+                              '',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20.0,

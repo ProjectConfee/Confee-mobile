@@ -188,23 +188,23 @@ class _StallMapPageState extends State<StallMapPage> {
           children: [
             SizedBox(height: 20),
             Text(
-              'Floor 1',
+              'Floor 1(Open Area)',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
             _buildFloorPlan(1),
             SizedBox(height: 40),
             Text(
-              'Floor 2',
+              'Floor 2(W001)',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
             _buildFloorPlan(2),
             SizedBox(height: 40),
-            Text(
-              'Shop Names',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
+            // Text(
+            //   'Stall Names',
+            //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            // ),
             SizedBox(height: 20),
             _buildShopNames(),
           ],
@@ -249,7 +249,7 @@ class _StallMapPageState extends State<StallMapPage> {
         ),
         child: Center(
           child: Text(
-            'Stall $number',
+            'Company $number',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ),
@@ -260,7 +260,7 @@ class _StallMapPageState extends State<StallMapPage> {
   Widget _buildShopNames() {
     List<Widget> shopNames = [];
     for (int i = 1; i <= 12; i++) {
-      shopNames.add(Text('Stall $i: Name of Shop $i'));
+      //shopNames.add(Text('Stall $i: Name of Shop $i'));
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

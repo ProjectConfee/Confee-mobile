@@ -46,7 +46,7 @@ flutter:
     - asset/images/v.png
     - asset/images/vv.png
     - asset/images/download.png
-    - asset/pdfs/aa.pdf
+    - asset/pdfs/Document 1.pdf
     - asset/images/registerNow.png
     - asset/images/speaker_1.jpg
     - asset/images/speaker_2.jpg
@@ -55,5 +55,8 @@ flutter:
     - asset/images/pre2.jpeg
     - asset/images/event_post.jpg
     - asset/images/
+    - asset/pdfs/
+    - asset/images/gold.jpeg
+
 
     

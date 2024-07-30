@@ -87,7 +87,7 @@ class _ViewLinkPageState extends State<ViewLinkPage> {
       ),
       body: Container(
         padding: EdgeInsets.all(20),
-        color: Colors.grey[200],
+        color: const Color.fromARGB(255, 254, 251, 251),
         child: ListView.builder(
           itemCount: links.length,
           itemBuilder: (context, index) {

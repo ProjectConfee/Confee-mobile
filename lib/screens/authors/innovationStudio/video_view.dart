@@ -366,7 +366,7 @@ class _VideoViewPageState extends State<VideoViewPage> {
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.all(20),
-          color: Colors.grey[300],
+          color: Color.fromARGB(255, 255, 255, 255),
           child: ListView(
             children: [
               _buildVideoCard('https://youtu.be/aK4mUsPRZHk?si=K1gRXYkkoItv62EF'),

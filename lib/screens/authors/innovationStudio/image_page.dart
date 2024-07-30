@@ -620,7 +620,7 @@ class _ImagePageState extends State<ImagePage> {
             Expanded(
               child: Container(
                 padding: EdgeInsets.all(25),
-                color: Colors.grey[300],
+                color: const Color.fromARGB(255, 255, 255, 255),
                 child: Column(
                   children: [
                     SizedBox(height: 20),
