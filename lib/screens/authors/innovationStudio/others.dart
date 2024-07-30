@@ -201,8 +201,14 @@ class OthersPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Others',style: TextStyle(color: Colors.white)),
         backgroundColor: Color(0xFF050C9B),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back,color: Colors.white,),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
-      backgroundColor: const Color.fromARGB(255, 250, 253, 255),
+      backgroundColor: Color.fromARGB(255, 253, 253, 253),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

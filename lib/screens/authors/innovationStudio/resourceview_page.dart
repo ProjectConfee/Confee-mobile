@@ -18,7 +18,7 @@
 //           onPressed: () {
 //             Navigator.pop(context); // Navigate back when arrow back is pressed
 //           },
-          
+
 //         ),
 
 //       ),
@@ -251,10 +251,8 @@
 //   }
 // }
 
-
-
 import 'package:flutter/material.dart';
-import 'resourcecategory.dart';  // Import the ResourceCategoryPage
+import 'resourcecategory.dart'; // Import the ResourceCategoryPage
 import 'home_page.dart'; // Import HomePage
 import 'profile_view.dart'; // Import ProfileViewPage
 import 'custom_bottom_navigation_bar.dart'; // Import the CustomBottomNavigationBar
@@ -297,20 +295,23 @@ class _ResourcePageState extends State<ResourcePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Resources',style: TextStyle(color: Colors.white)),
-        backgroundColor: Color(0xFF050C9B),  // Set the app bar color
+        title: Text('Resources', style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF050C9B), // Set the app bar color
         leading: IconButton(
-          icon: Icon(Icons.arrow_back,color: Colors.white,),
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
           onPressed: () {
             Navigator.pop(context); // Navigate back when arrow back is pressed
           },
         ),
       ),
-      backgroundColor:Color(0xFF050C9B),
+      backgroundColor: Color(0xFF050C9B),
       bottomNavigationBar: HomeBottomBar(
-        //currentIndex: _currentIndex,
-        //onTap: _onTap,
-      ),
+          //currentIndex: _currentIndex,
+          //onTap: _onTap,
+          ),
       body: SafeArea(
         child: Column(
           children: [
@@ -336,11 +337,13 @@ class _ResourcePageState extends State<ResourcePage> {
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ResourceCategoryPage()),
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ResourceCategoryPage()),
                               );
                             },
                             child: ProfessionalTile(
-                              imagePath: 'asset/images/silver_badge.png',
+                              imagePath: 'asset/images/gold.jpeg',
                               companyName: 'COMPANY 01',
                               description: 'Leading company of SL',
                             ),
@@ -349,32 +352,34 @@ class _ResourcePageState extends State<ResourcePage> {
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ResourceCategoryPage()),
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ResourceCategoryPage()),
                               );
                             },
                             child: ProfessionalTile(
-                              imagePath: 'asset/images/gold_badge.png',
+                              imagePath: 'asset/images/silver.png',
                               companyName: 'COMPANY 02',
                               description: 'Now we are open for You',
                             ),
                           ),
                           ProfessionalTile(
-                            imagePath: 'asset/images/platinum_badge.png',
+                            imagePath: 'asset/images/platinum.jpeg',
                             companyName: 'COMPANY 03',
                             description: 'World famous company',
                           ),
                           ProfessionalTile(
-                            imagePath: 'asset/images/silver_badge.png',
+                            imagePath: 'asset/images/gold.jpeg',
                             companyName: 'COMPANY 04',
                             description: 'For YOU',
                           ),
                           ProfessionalTile(
-                            imagePath: 'asset/images/gold_badge.png',
+                            imagePath: 'asset/images/platinum.jpeg',
                             companyName: 'COMPANY 05',
                             description: 'Happy coding',
                           ),
                           ProfessionalTile(
-                            imagePath: 'asset/images/silver_badge.png',
+                            imagePath: 'asset/images/silver.png',
                             companyName: 'COMPANY 06',
                             description: 'WSO2 WSO2',
                           ),
@@ -434,4 +439,3 @@ class ProfessionalTile extends StatelessWidget {
     );
   }
 }
-

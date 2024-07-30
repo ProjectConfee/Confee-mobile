@@ -256,7 +256,7 @@ class _StallCheckedPageState extends State<StallCheckedPage> {
           ...List.generate(12, (index) {
             int stallNumber = index + 1;
             return ListTile(
-              title: Text('Stall $stallNumber'),
+              title: Text('Company $stallNumber',style: TextStyle(fontSize: 20)),
               trailing: Checkbox(
                 value: _visitedStalls[stallNumber],
                 onChanged: (bool? value) {

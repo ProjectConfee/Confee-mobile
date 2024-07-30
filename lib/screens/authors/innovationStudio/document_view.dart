@@ -429,19 +429,25 @@ class _DocumentViewPageState extends State<DocumentViewPage> {
       appBar: AppBar(
         title: Text('Document View',style: TextStyle(color: Colors.white)),
         backgroundColor:  Color(0xFF050C9B),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back,color: Colors.white,),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            buildDocumentCard(context, 'kk.pdf'), // Card for kk.pdf
-            buildDocumentCard(context, 'k.pdf'),
-            buildDocumentCard(context, 'kk.pdf'), // Card for kk.pdf
-            buildDocumentCard(context, 'k.pdf'),
-            buildDocumentCard(context, 'aa.pdf'), // Card for aa.pdf
-            buildDocumentCard(context, 'dd.pdf'), // Card for dd.pdf
-            buildDocumentCard(context, 'kk.pdf'), // Card for kk.pdf
-            buildDocumentCard(context, 'k.pdf'),  // Card for k.pdf
+            buildDocumentCard(context, 'Document 1.pdf'), // Card for kk.pdf
+            buildDocumentCard(context, 'Document 2.pdf'),
+            buildDocumentCard(context, 'Document 3.pdf'), // Card for kk.pdf
+            buildDocumentCard(context, 'Document 4.pdf'),
+            // buildDocumentCard(context, 'aa.pdf'), // Card for aa.pdf
+            // buildDocumentCard(context, 'dd.pdf'), // Card for dd.pdf
+            // buildDocumentCard(context, 'kk.pdf'), // Card for kk.pdf
+            // buildDocumentCard(context, 'k.pdf'),  // Card for k.pdf
           ],
         ),
       ),
@@ -461,7 +467,7 @@ class _DocumentViewPageState extends State<DocumentViewPage> {
         );
       },
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 10.0),
+        margin: EdgeInsets.symmetric(vertical: 5.0),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10.0),
@@ -472,7 +478,7 @@ class _DocumentViewPageState extends State<DocumentViewPage> {
               blurRadius: 10.0,
             ),
           ],
-          border: Border.all(color: Colors.red, width: 2), // Add red border
+          border: Border.all(color: Color.fromARGB(255, 57, 44, 244), width: 2), // Add red border
         ),
         child: Column(
           children: [
@@ -480,7 +486,7 @@ class _DocumentViewPageState extends State<DocumentViewPage> {
               padding: EdgeInsets.all(20.0),
               child: Icon(
                 Icons.picture_as_pdf,
-                color: Colors.red,
+                color:  Color.fromARGB(255, 57, 44, 244),
                 size: 40.0,
               ),
             ),
@@ -520,8 +526,15 @@ class PDFViewerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PDF Viewer'),
-        backgroundColor: Colors.blue[800],
+        title: Text('PDF Viewer  ',style: TextStyle(color: Colors.white)),
+        
+        backgroundColor: Color(0xFF050C9B),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back,color: Colors.white,),
+          onPressed: () {
+            Navigator.pop(context);
+          }
+        )
       ),
       body: SfPdfViewer.asset(
         'asset/pdfs/$pdfFileName', // Corrected path to the PDF file

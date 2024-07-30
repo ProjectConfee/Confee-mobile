@@ -118,7 +118,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
         title: Text('Description',style: TextStyle(color: Colors.white)),
         backgroundColor: Color(0xFF050C9B), // Set the app bar color
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back,color: Colors.white,),
           onPressed: () {
             Navigator.pop(context); // Navigate back when arrow back is pressed
           },

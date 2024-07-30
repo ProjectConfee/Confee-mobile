@@ -210,6 +210,12 @@ class _CompetitionPageState extends State<CompetitionPage> {
       appBar: AppBar(
         title: Text('Competition',style: TextStyle(color: Colors.white)),
         backgroundColor: Color(0xFF050C9B),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back,color: Colors.white,),
+          onPressed: () {
+            Navigator.pop(context); // Navigate back when arrow back is pressed
+          },
+        ),
       ),
       body: WebView(
         initialUrl: 'https://icter.lk/i-am-a-researcher/',

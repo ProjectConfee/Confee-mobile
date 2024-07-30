@@ -297,6 +297,12 @@ class _ResourceCategoryPageState extends State<ResourceCategoryPage> {
       appBar: AppBar(
         title: Text('Resource Category', style: TextStyle(color: Colors.white)),
         backgroundColor: Color(0xFF050C9B),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back,color: Colors.white,),
+          onPressed: () {
+            Navigator.pop(context); // Navigate back when arrow back is pressed
+          },
+        ),
       ),
       backgroundColor: Color(0xFF050C9B),
       bottomNavigationBar: HomeBottomBar(
