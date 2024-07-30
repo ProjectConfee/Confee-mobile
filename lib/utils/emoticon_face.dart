@@ -16,13 +16,13 @@ class EmoticonFace extends StatelessWidget {
       width: 106,
       height: 106,
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255), // Brighter color
+        color: Color.fromARGB(255, 227, 226, 226), // Brighter color
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5), // Shadow color
-            spreadRadius: 5, // Spread radius
-            blurRadius: 7, // Blur radius
+            spreadRadius: 1, // Spread radius
+            blurRadius: 1, // Blur radius
             offset: Offset(0, 3), // Shadow offset
           ),
         ],

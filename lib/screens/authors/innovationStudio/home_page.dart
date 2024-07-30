@@ -170,7 +170,8 @@ class _HomePageState extends State<HomePage_Sponser> {
               child: Container(
                   
                 padding: EdgeInsets.all(25),
-                color: Color.fromARGB(255, 228, 225, 225),
+                //color: Color.fromARGB(255, 228, 225, 225),
+                color: Colors.white,
                 child: Column(
                   
                   children: [
