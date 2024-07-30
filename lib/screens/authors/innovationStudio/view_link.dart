@@ -49,11 +49,19 @@ class _ViewLinkPageState extends State<ViewLinkPage> {
     },
   ];
 
+<<<<<<< HEAD:lib/pages/participant/innovation/view_link.dart
+  int _currentIndex = 1; // Default to Packages tab
+
+  void _onTap(int index) {
+    setState(() {
+      _currentIndex = index;
+=======
  // int _currentIndex = 1; // Default to Packages tab
 
   void _onTap(int index) {
     setState(() {
       //_currentIndex = index;
+>>>>>>> 7a71221ed955c57bf2df2668d73fc5beaa19b8b5:lib/screens/authors/innovationStudio/view_link.dart
     });
 
     switch (index) {
@@ -61,7 +69,11 @@ class _ViewLinkPageState extends State<ViewLinkPage> {
         // Navigate to the HomePage when the home icon is tapped
         Navigator.pushAndRemoveUntil(
           context,
+<<<<<<< HEAD:lib/pages/participant/innovation/view_link.dart
+          MaterialPageRoute(builder: (context) => HomePage()),
+=======
           MaterialPageRoute(builder: (context) => HomePage_Sponser()),
+>>>>>>> 7a71221ed955c57bf2df2668d73fc5beaa19b8b5:lib/screens/authors/innovationStudio/view_link.dart
           (Route<dynamic> route) => false,
         );
         break;
@@ -82,8 +94,13 @@ class _ViewLinkPageState extends State<ViewLinkPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+<<<<<<< HEAD:lib/pages/participant/innovation/view_link.dart
+        title: Text('View Link'),
+        backgroundColor: Colors.blue[800],
+=======
         title: Text('View Link',style: TextStyle(color: Colors.white)),
         backgroundColor: Color(0xFF050C9B),
+>>>>>>> 7a71221ed955c57bf2df2668d73fc5beaa19b8b5:lib/screens/authors/innovationStudio/view_link.dart
       ),
       body: Container(
         padding: EdgeInsets.all(20),
@@ -128,9 +145,15 @@ class _ViewLinkPageState extends State<ViewLinkPage> {
           },
         ),
       ),
+<<<<<<< HEAD:lib/pages/participant/innovation/view_link.dart
+      bottomNavigationBar: CustomBottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: _onTap,
+=======
       bottomNavigationBar: HomeBottomBar(
         //currentIndex: _currentIndex,
        // onTap: _onTap,
+>>>>>>> 7a71221ed955c57bf2df2668d73fc5beaa19b8b5:lib/screens/authors/innovationStudio/view_link.dart
       ),
     );
   }

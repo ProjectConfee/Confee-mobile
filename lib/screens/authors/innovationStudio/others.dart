@@ -199,8 +199,13 @@ class OthersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+<<<<<<< HEAD:lib/pages/participant/innovation/others.dart
+        title: Text('Others'),
+        backgroundColor: Colors.blue[800],
+=======
         title: Text('Others',style: TextStyle(color: Colors.white)),
         backgroundColor: Color(0xFF050C9B),
+>>>>>>> 7a71221ed955c57bf2df2668d73fc5beaa19b8b5:lib/screens/authors/innovationStudio/others.dart
       ),
       backgroundColor: const Color.fromARGB(255, 250, 253, 255),
       body: SafeArea(
