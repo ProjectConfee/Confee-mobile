@@ -325,7 +325,8 @@ class _ResourcePageState extends State<ResourcePage> {
             Expanded(
               child: Container(
                 padding: EdgeInsets.all(25),
-                color: const Color.fromARGB(255, 249, 248, 248),
+                //color: const Color.fromARGB(255, 249, 248, 248),
+                color: Colors.white,
                 child: Column(
                   children: [
                     Expanded(
