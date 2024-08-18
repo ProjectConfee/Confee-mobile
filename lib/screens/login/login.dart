@@ -1,24 +1,39 @@
 import 'package:flutter/material.dart';
+import '../../utils/size_config.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginAndForgotPassword extends StatefulWidget {
+  @override
+  _LoginAndForgotPasswordState createState() => _LoginAndForgotPasswordState();
+}
+
+class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
+  bool _showForgotPassword = false;
+
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context); // Initialize SizeConfig
+
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(  // Wrap the content with SingleChildScrollView
+        body: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.all(24),
+            margin: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 6), // Updated margin
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(height: 30),
-                _header(),
-                SizedBox(height: 20), // Adjust the spacing as needed
-                _image(), // Add the image widget here
-                SizedBox(height: 20), // Adjust the spacing as needed
-                _inputFields(context),
-                SizedBox(height: 10),
-                _forgotPassword(context),
+                SizedBox(height: SizeConfig.heightMultiplier * 3), // Updated size
+
+                _showForgotPassword ? _forgotPasswordHeader() : _loginHeader(),
+                SizedBox(height: SizeConfig.heightMultiplier * 2), // Updated size
+                _showForgotPassword
+                    ? _image('asset/images/password.png')
+                    : _image('asset/images/login.png'),
+                SizedBox(height: SizeConfig.heightMultiplier * 2), // Updated size
+                _showForgotPassword ? _forgotPasswordInputFields(context) : _loginInputFields(context),
+                SizedBox(height: SizeConfig.heightMultiplier * 4), // Updated size
+                _showForgotPassword ? _forgotPasswordButton(context) : _loginButton(context),
+                if (!_showForgotPassword)
+                  _forgotPasswordLink(context), // Show link to switch to forgot password
               ],
             ),
           ),
@@ -27,36 +42,60 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget _header() {
+  Widget _loginHeader() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           "Welcome to Confee",
           style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold
+            fontSize: SizeConfig.textMultiplier * 4, // Updated text size
+            fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: SizeConfig.heightMultiplier * 1), // Updated size
         Text(
           "ICTer Conference",
           style: TextStyle(
-              fontSize: 20
+            fontSize: SizeConfig.textMultiplier * 2, // Updated text size
           ),
         ),
       ],
     );
   }
 
-  Widget _image() {
-    return Image.asset(
-      'asset/images/login.png', // Make sure to add your image to the assets folder and update the path
-      height: 300, // Adjust the height as needed
+  Widget _forgotPasswordHeader() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          "Forgot password",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: SizeConfig.textMultiplier * 4, // Updated text size
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(height: SizeConfig.heightMultiplier * 2), // Updated size
+        Text(
+          "Enter the email address to request a password reset",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: SizeConfig.textMultiplier * 2, // Updated text size
+          ),
+        ),
+      ],
     );
   }
 
-  Widget _inputFields(BuildContext context) {
+  Widget _image(String path) {
+    return Image.asset(
+      path,
+      height: SizeConfig.imageSizeMultiplier * 75, // Updated image size
+    );
+  }
+
+  Widget _loginInputFields(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -65,13 +104,11 @@ class LoginPage extends StatelessWidget {
             hintText: "Username",
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(18),
-              borderSide: BorderSide.none,
+               borderSide: BorderSide.none,
             ),
             fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(
-                Icons.person
-            ),
+            prefixIcon: Icon(Icons.person),
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
@@ -80,7 +117,7 @@ class LoginPage extends StatelessWidget {
             return null;
           },
         ),
-        SizedBox(height: 20),
+        SizedBox(height: SizeConfig.heightMultiplier * 2), // Updated size
         TextFormField(
           decoration: InputDecoration(
             hintText: "Password",
@@ -90,9 +127,7 @@ class LoginPage extends StatelessWidget {
             ),
             fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(
-                Icons.lock
-            ),
+            prefixIcon: Icon(Icons.lock),
           ),
           obscureText: true,
           validator: (value) {
@@ -102,110 +137,11 @@ class LoginPage extends StatelessWidget {
             return null;
           },
         ),
-        SizedBox(height: 40),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 80.0),
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, '/participant_dashboard');
-              //Navigator.pushReplacementNamed(context, '/oc_dashboard');
-
-
-              // Navigator.pushReplacementNamed(context, '/home_workshop_participants');
-            },
-            child: Text(
-              "Login",
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white
-              ), // Text color is white
-            ),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF3572EF), // Background color
-              padding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 15
-              ), // Adjust padding as needed
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
-              ),
-            ),
-          ),
-        )
       ],
     );
   }
 
-  void _navigateToForgotPasswordPage(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => ForgotPassword()),
-    );
-  }
-
-  Widget _forgotPassword(BuildContext context) {
-    return TextButton(
-      onPressed: () => _navigateToForgotPasswordPage(context),
-      child: Text("Forgot password?"),
-    );
-  }
-}
-
-class ForgotPassword extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(  // Wrap the content with SingleChildScrollView
-          child: Container(
-            margin: EdgeInsets.all(24),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(height: 30),
-                _header(),
-                SizedBox(height: 20), // Adjust the spacing as needed
-                _image(), // Add the image widget here
-                SizedBox(height: 20), // Adjust the spacing as needed
-                _inputFields(context),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _header() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text(
-          "Forgot password",
-          textAlign: TextAlign.center,  // Center align text
-          style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold
-          ),
-        ),
-        SizedBox(height: 20),
-        Text(
-          "Enter the email address to request a password reset",
-          textAlign: TextAlign.center,  // Center align text
-          style: TextStyle(
-              fontSize: 20
-          ),
-        ),
-      ],
-    );
-  }
-  Widget _image() {
-    return Image.asset(
-      'asset/images/password.png', // Make sure to add your image to the assets folder and update the path
-      height: 300, // Adjust the height as needed
-    );
-  }
-  Widget _inputFields(BuildContext context) {
+  Widget _forgotPasswordInputFields(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -218,45 +154,90 @@ class ForgotPassword extends StatelessWidget {
             ),
             fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(
-                Icons.person
-            ),
+            prefixIcon: Icon(Icons.person),
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Please enter your username';
+              return 'Please enter your email';
             }
             return null;
           },
         ),
-        SizedBox(height: 60),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 80.0),
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, '/email_otp');
-
-            },
-            child: Text(
-              "Next",
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white
-              ), // Text color is white
-            ),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF3572EF), // Background color
-              padding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 15
-              ), // Adjust padding as needed
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
-              ),
-            ),
-          ),
-        )
       ],
+    );
+  }
+
+  Widget _loginButton(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: SizeConfig.blockSizeHorizontal * 20, // Updated padding
+      ),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.pushReplacementNamed(
+            context,
+            '/participant_dashboard',
+          );
+        },
+        child: Text(
+          "Login",
+          style: TextStyle(
+            fontSize: SizeConfig.textMultiplier * 2, // Updated text size
+            color: Colors.white,
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Color(0xFF3572EF),
+          padding: EdgeInsets.symmetric(
+            horizontal: SizeConfig.blockSizeHorizontal * 12, // Updated padding
+            vertical: SizeConfig.heightMultiplier * 1.5, // Updated padding
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(18),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _forgotPasswordButton(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: SizeConfig.blockSizeHorizontal * 20, // Updated padding
+      ),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, '/email_otp');
+        },
+        child: Text(
+          "Next",
+          style: TextStyle(
+            fontSize: SizeConfig.textMultiplier * 2, // Updated text size
+            color: Colors.white,
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Color(0xFF3572EF),
+          padding: EdgeInsets.symmetric(
+            horizontal: SizeConfig.blockSizeHorizontal * 5, // Updated padding
+            vertical: SizeConfig.heightMultiplier * 1.5, // Updated padding
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(18),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _forgotPasswordLink(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        setState(() {
+          _showForgotPassword = true;
+        });
+      },
+      child: Text("Forgot password?"),
     );
   }
 }
