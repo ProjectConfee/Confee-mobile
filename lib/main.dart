@@ -1,8 +1,5 @@
 import 'package:confee/screens/notifications/notification.dart';
 import 'package:flutter/material.dart';
-// import 'package:youtube_1/pages/participant/innovation/home_page.dart';
-// import 'package:youtube_1/pages/participant/innovation/profile_view.dart';
-
 import 'screens/authors/dashboard.dart';
 import 'screens/authors/edit_profile.dart';
 import 'screens/authors/innovationStudio/home_page.dart';
@@ -43,7 +40,7 @@ class MyApp extends StatelessWidget {
 
         // ## Login ##
 
-        '/login': (context) => LoginPage(),
+        '/login': (context) => LoginAndForgotPassword(),
         // '/forgot_password': (context) => ForgotPassword(),
         '/email_otp': (context) => EmailOtp(),
         '/phone_otp': (context) => PhoneOtp(),
