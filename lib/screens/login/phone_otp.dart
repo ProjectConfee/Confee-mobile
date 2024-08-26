@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
+import '../../utils/size_config.dart'; // Import your SizeConfig file
 
 class PhoneOtp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context); // Initialize SizeConfig
+
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(  // Wrap the content with SingleChildScrollView
+        body: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.all(24),
+            margin: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 6), // Responsive margin
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(height: 30),
+                SizedBox(height: SizeConfig.blockSizeVertical * 3), // Responsive spacing
                 _header(),
-                SizedBox(height: 20), // Adjust the spacing as needed
-                _image(), // Add the image widget here
-                SizedBox(height: 20), // Adjust the spacing as needed
+                SizedBox(height: SizeConfig.blockSizeVertical * 2), // Responsive spacing
+                _image(),
+                SizedBox(height: SizeConfig.blockSizeVertical * 2), // Responsive spacing
                 _inputFields(context),
-                SizedBox(height: 5),
+                SizedBox(height: SizeConfig.blockSizeVertical * 1), // Responsive spacing
                 _resend(context),
               ],
             ),
@@ -34,29 +37,31 @@ class PhoneOtp extends StatelessWidget {
         Text(
           "Verification",
           style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold
+            fontSize: SizeConfig.textMultiplier * 4, // Responsive font size
+            fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: SizeConfig.blockSizeVertical * 1), // Responsive spacing
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
             style: TextStyle(
-                fontSize: 20,
-                color: Colors.black
-            ), // Default text style
+              fontSize: SizeConfig.textMultiplier * 2, // Responsive font size
+              color: Colors.black,
+            ),
             children: [
               TextSpan(
-                  text: "Please enter the 6-digit OTP code sent to your "
+                text: "Please enter the 6-digit OTP code sent to your ",
               ),
               TextSpan(
                 text: "Phone number",
                 style: TextStyle(
                     fontWeight: FontWeight.bold
-                ), // Bold style for "email"
+                ),
               ),
-              TextSpan(text: "."),
+              TextSpan(
+                  text: "."
+              ),
             ],
           ),
         ),
@@ -66,8 +71,8 @@ class PhoneOtp extends StatelessWidget {
 
   Widget _image() {
     return Image.asset(
-      'asset/images/otp.png', // Make sure to add your image to the assets folder and update the path
-      height: 300, // Adjust the height as needed
+      'asset/images/otp.png',
+      height: SizeConfig.blockSizeVertical * 30, // Responsive image height
     );
   }
 
@@ -79,42 +84,49 @@ class PhoneOtp extends StatelessWidget {
           decoration: InputDecoration(
             hintText: "Phone number OTP Code",
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(
+                  SizeConfig.blockSizeHorizontal * 4.5
+              ), // Responsive border radius
               borderSide: BorderSide.none,
             ),
             fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
-            // prefixIcon: Icon(Icons.person),
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Please enter your username';
+              return 'Please enter the OTP code';
             }
             return null;
           },
         ),
-        SizedBox(height: 50),
+        SizedBox(height: SizeConfig.blockSizeVertical * 5), // Responsive spacing
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 80.0),
+          padding: EdgeInsets.symmetric(
+              horizontal: SizeConfig.blockSizeHorizontal * 20
+          ), // Responsive padding
           child: ElevatedButton(
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/reset_password');
+              Navigator.pushReplacementNamed(
+                  context, '/reset_password'
+              );
             },
             child: Text(
               "Next",
               style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white
-              ), // Text color is white
+                fontSize: SizeConfig.textMultiplier * 2.5, // Responsive font size
+                color: Colors.white,
+              ),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF3572EF), // Background color
+              backgroundColor: Color(0xFF3572EF),
               padding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 15
-              ), // Adjust padding as needed
+                horizontal: SizeConfig.blockSizeHorizontal * 5, // Responsive padding
+                vertical: SizeConfig.blockSizeVertical * 2.5,
+              ),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
+                borderRadius: BorderRadius.circular(
+                    SizeConfig.blockSizeHorizontal * 4.5
+                ), // Responsive border radius
               ),
             ),
           ),
@@ -128,13 +140,20 @@ class PhoneOtp extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-            "Didn't receive the verification OTP?"
+          "Didn't receive the verification OTP?",
+          style: TextStyle(
+              fontSize: SizeConfig.textMultiplier * 2
+          ), // Responsive font size
         ),
-        TextButton(onPressed: () {},
-            child: Text(
-                "Resend OTP"
-            )
-        )
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            "Resend OTP",
+            style: TextStyle(
+                fontSize: SizeConfig.textMultiplier * 2
+            ), // Responsive font size
+          ),
+        ),
       ],
     );
   }
