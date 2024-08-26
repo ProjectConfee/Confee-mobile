@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
+import '../../utils/size_config.dart'; // Import your SizeConfig file
 
 class ResetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context); // Initialize SizeConfig
+
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView( // Wrap the content with SingleChildScrollView
+        body: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.all(24),
+            margin: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 6), // Responsive margin
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(height: 30),
+                SizedBox(height: SizeConfig.blockSizeVertical * 3), // Responsive spacing
                 _header(),
-                SizedBox(height: 20), // Adjust the spacing as needed
-                _image(), // Add the image widget here
-                SizedBox(height: 20), // Adjust the spacing as needed
+                SizedBox(height: SizeConfig.blockSizeVertical * 2), // Responsive spacing
+                _image(),
+                SizedBox(height: SizeConfig.blockSizeVertical * 2), // Responsive spacing
                 _inputFields(context),
-                SizedBox(height: 10),
+                SizedBox(height: SizeConfig.blockSizeVertical * 1), // Responsive spacing
               ],
             ),
           ),
@@ -33,16 +36,16 @@ class ResetPassword extends StatelessWidget {
         Text(
           "Reset Password",
           style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold
+            fontSize: SizeConfig.textMultiplier * 4, // Responsive font size
+            fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: SizeConfig.blockSizeVertical * 1), // Responsive spacing
         Text(
           "Your new password must be different from previous used password.",
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 20
+            fontSize: SizeConfig.textMultiplier * 2, // Responsive font size
           ),
         ),
       ],
@@ -52,8 +55,7 @@ class ResetPassword extends StatelessWidget {
   Widget _image() {
     return Image.asset(
       'asset/images/confirm.png',
-      // Make sure to add your image to the assets folder and update the path
-      height: 300, // Adjust the height as needed
+      height: SizeConfig.blockSizeVertical * 30, // Responsive image height
     );
   }
 
@@ -65,14 +67,12 @@ class ResetPassword extends StatelessWidget {
           decoration: InputDecoration(
             hintText: "New password",
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(
+                  SizeConfig.blockSizeHorizontal * 4.5
+              ), // Responsive border radius
               borderSide: BorderSide.none,
             ),
-            fillColor: Theme
-                .of(context)
-                .colorScheme
-                .secondary
-                .withOpacity(0.1),
+            fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
             prefixIcon: Icon(
                 Icons.lock
@@ -80,24 +80,22 @@ class ResetPassword extends StatelessWidget {
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Please enter your username';
+              return 'Please enter your password';
             }
             return null;
           },
         ),
-        SizedBox(height: 20),
+        SizedBox(height: SizeConfig.blockSizeVertical * 2), // Responsive spacing
         TextFormField(
           decoration: InputDecoration(
             hintText: "Confirm password",
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(
+                  SizeConfig.blockSizeHorizontal * 4.5
+              ), // Responsive border radius
               borderSide: BorderSide.none,
             ),
-            fillColor: Theme
-                .of(context)
-                .colorScheme
-                .secondary
-                .withOpacity(0.1),
+            fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
             prefixIcon: Icon(
                 Icons.lock
@@ -111,29 +109,34 @@ class ResetPassword extends StatelessWidget {
             return null;
           },
         ),
-        SizedBox(height: 40),
+        SizedBox(height: SizeConfig.blockSizeVertical * 5), // Responsive spacing
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 80.0),
+          padding: EdgeInsets.symmetric(
+              horizontal: SizeConfig.blockSizeHorizontal * 20
+          ), // Responsive padding
           child: ElevatedButton(
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/password_changed');            },
+              Navigator.pushReplacementNamed(
+                  context, '/password_changed'
+              );
+            },
             child: Text(
               "Next",
               style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white
-              ), // Text color is white
+                fontSize: SizeConfig.textMultiplier * 2.5, // Responsive font size
+                color: Colors.white,
+              ),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF3572EF),
-              // Background color
+              backgroundColor: Color(0xFF3572EF), // Background color
               padding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 15
+                horizontal: SizeConfig.blockSizeHorizontal * 5, // Responsive padding
+                vertical: SizeConfig.blockSizeVertical * 2.5,
               ),
-              // Adjust padding as needed
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
+                borderRadius: BorderRadius.circular(
+                    SizeConfig.blockSizeHorizontal * 4.5
+                ), // Responsive border radius
               ),
             ),
           ),

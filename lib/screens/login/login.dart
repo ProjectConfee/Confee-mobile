@@ -17,7 +17,9 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 6), // Updated margin
+            margin: EdgeInsets.all(
+                SizeConfig.blockSizeHorizontal * 6
+            ), // Updated margin
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -108,7 +110,9 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
             ),
             fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(Icons.person),
+            prefixIcon: Icon(
+                Icons.person
+            ),
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
@@ -207,7 +211,9 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
       ),
       child: ElevatedButton(
         onPressed: () {
-          Navigator.pushReplacementNamed(context, '/email_otp');
+          Navigator.pushReplacementNamed(
+              context, '/email_otp'
+          );
         },
         child: Text(
           "Next",
@@ -237,7 +243,9 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
           _showForgotPassword = true;
         });
       },
-      child: Text("Forgot password?"),
+      child: Text(
+          "Forgot password?"
+      ),
     );
   }
 }

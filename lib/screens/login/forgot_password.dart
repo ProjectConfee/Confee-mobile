@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import '../../utils/size_config.dart';
 
 class ForgotPassword extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context); // Initialize SizeConfig
+
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(  // Wrap the content with SingleChildScrollView
+        body: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.all(24),
+            margin: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 6), // Adjust margin
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(height: 30),
+                SizedBox(height: SizeConfig.blockSizeVertical * 3), // Responsive spacing
                 _header(),
-                SizedBox(height: 20), // Adjust the spacing as needed
-                _image(), // Add the image widget here
-                SizedBox(height: 20), // Adjust the spacing as needed
+                SizedBox(height: SizeConfig.blockSizeVertical * 2), // Responsive spacing
+                _image(),
+                SizedBox(height: SizeConfig.blockSizeVertical * 2), // Responsive spacing
                 _inputFields(context),
               ],
             ),
@@ -32,18 +34,18 @@ class ForgotPassword extends StatelessWidget {
       children: [
         Text(
           "Forgot password",
-          textAlign: TextAlign.center,  // Center align text
+          textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold
+            fontSize: SizeConfig.textMultiplier * 4, // Responsive font size
+            fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: SizeConfig.blockSizeVertical * 2), // Responsive spacing
         Text(
           "Enter the email address to request a password reset",
-          textAlign: TextAlign.center,  // Center align text
+          textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 20
+            fontSize: SizeConfig.textMultiplier * 2, // Responsive font size
           ),
         ),
       ],
@@ -52,8 +54,8 @@ class ForgotPassword extends StatelessWidget {
 
   Widget _image() {
     return Image.asset(
-      'asset/images/password.png', // Make sure to add your image to the assets folder and update the path
-      height: 300, // Adjust the height as needed
+      'asset/images/password.png',
+      height: SizeConfig.blockSizeVertical * 30, // Responsive image height
     );
   }
 
@@ -65,47 +67,57 @@ class ForgotPassword extends StatelessWidget {
           decoration: InputDecoration(
             hintText: "Enter your email",
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(
+                  SizeConfig.blockSizeHorizontal * 4.5
+              ), // Responsive border radius
               borderSide: BorderSide.none,
             ),
             fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(Icons.person),
+            prefixIcon: Icon(
+                Icons.person,
+                size: SizeConfig.imageSizeMultiplier * 6
+            ), // Responsive icon size
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Please enter your username';
+              return 'Please enter your email';
             }
             return null;
           },
         ),
-
-        SizedBox(height: 60),
+        SizedBox(height: SizeConfig.blockSizeVertical * 6), // Responsive spacing
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 80.0),
+          padding: EdgeInsets.symmetric(
+              horizontal: SizeConfig.blockSizeHorizontal * 20
+          ), // Responsive padding
           child: ElevatedButton(
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/email_otp');
+              Navigator.pushReplacementNamed(
+                  context, '/email_otp'
+              );
             },
             child: Text(
               "Next",
               style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white
-              ), // Text color is white
+                fontSize: SizeConfig.textMultiplier * 2.5, // Responsive font size
+                color: Colors.white,
+              ),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF3572EF), // Background color
+              backgroundColor: Color(0xFF3572EF),
               padding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 15
-              ), // Adjust padding as needed
+                horizontal: SizeConfig.blockSizeHorizontal * 5, // Responsive horizontal padding
+                vertical: SizeConfig.blockSizeVertical * 2.5, // Responsive vertical padding
+              ),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
+                borderRadius: BorderRadius.circular(
+                    SizeConfig.blockSizeHorizontal * 4.5
+                ), // Responsive border radius
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
