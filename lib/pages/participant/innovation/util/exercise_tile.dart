@@ -24,7 +24,7 @@ class ExerciseTile extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Color.fromARGB(255, 220, 219, 219),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Row(
@@ -36,7 +36,7 @@ class ExerciseTile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     child: Container(
                       padding: EdgeInsets.all(16),
-                      color: Color.fromARGB(255, 56, 147, 237),
+                      color: Color(0xFF050C9B),
                       child: Icon(
                         icon,
                         color: Colors.white,

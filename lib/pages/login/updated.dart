@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
+import '../../utils/size_config.dart';  // Import your SizeConfig file
 
-class ConfirmedPage extends StatelessWidget {
+class PasswordChanged extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context); // Initialize SizeConfig
+
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView( // Wrap the content with SingleChildScrollView
+        body: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.all(24),
+            margin: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 6), // Responsive margin
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(height: 50),
+                SizedBox(height: SizeConfig.blockSizeVertical * 5), // Responsive spacing
                 _image(),
-                SizedBox(height: 20), // Adjust the spacing as needed
+                SizedBox(height: SizeConfig.blockSizeVertical * 2), // Responsive spacing
                 _header(),
-                SizedBox(height: 60), // Adjust the spacing as needed
+                SizedBox(height: SizeConfig.blockSizeVertical * 6), // Responsive spacing
                 _inputFields(context),
-                SizedBox(height: 10),
+                SizedBox(height: SizeConfig.blockSizeVertical * 1), // Responsive spacing
               ],
             ),
           ),
@@ -32,15 +35,18 @@ class ConfirmedPage extends StatelessWidget {
       children: [
         Text(
           "Password Updated",
-          style: TextStyle(fontSize: 40,
-              fontWeight: FontWeight.bold
+          style: TextStyle(
+            fontSize: SizeConfig.textMultiplier * 4, // Responsive font size
+            fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: SizeConfig.blockSizeVertical * 1), // Responsive spacing
         Text(
           "Your password has been updated.",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(
+            fontSize: SizeConfig.textMultiplier * 2, // Responsive font size
+          ),
         ),
       ],
     );
@@ -49,8 +55,7 @@ class ConfirmedPage extends StatelessWidget {
   Widget _image() {
     return Image.asset(
       'asset/images/verify.png',
-      // Make sure to add your image to the assets folder and update the path
-      height: 300, // Adjust the height as needed
+      height: SizeConfig.blockSizeVertical * 30, // Responsive image height
     );
   }
 
@@ -59,22 +64,32 @@ class ConfirmedPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 80.0),
+          padding: EdgeInsets.symmetric(
+              horizontal: SizeConfig.blockSizeHorizontal * 20
+          ), // Responsive padding
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacementNamed(
+                  context, '/login'
+              );
+            },
             child: Text(
               "Login",
-              style: TextStyle(fontSize: 20,
-                  color: Colors.white
-              ), // Text color is white
+              style: TextStyle(
+                fontSize: SizeConfig.textMultiplier * 2.5, // Responsive font size
+                color: Colors.white,
+              ),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF3572EF),
-              // Background color
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              // Adjust padding as needed
+              backgroundColor: Color(0xFF3572EF), // Background color
+              padding: EdgeInsets.symmetric(
+                horizontal: SizeConfig.blockSizeHorizontal * 5, // Responsive padding
+                vertical: SizeConfig.blockSizeVertical * 2.5,
+              ),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
+                borderRadius: BorderRadius.circular(
+                    SizeConfig.blockSizeHorizontal * 4.5
+                ), // Responsive border radius
               ),
             ),
           ),

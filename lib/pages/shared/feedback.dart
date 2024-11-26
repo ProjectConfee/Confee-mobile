@@ -115,16 +115,6 @@ class _FeedbacksState extends State<Feedbacks> {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(''), // Replace with your background image path
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
           Positioned(
             top: 0,
             left: 0,
@@ -142,9 +132,14 @@ class _FeedbacksState extends State<Feedbacks> {
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
+                          GestureDetector(
+                              onTap:(){
+                                Navigator.pushReplacementNamed(context, '/View_Event');
+                              },
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                            ),
                           ),
                           SizedBox(width: 10),
                           Text(
@@ -177,7 +172,7 @@ class _FeedbacksState extends State<Feedbacks> {
                     right: 10,
                     child: CircleAvatar(
                       radius: 30,
-                      backgroundImage: AssetImage('assets/img/profile.webp'),
+                      backgroundImage: AssetImage('asset/images/profile.png'),
                     ),
                   ),
                 ],

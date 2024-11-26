@@ -36,9 +36,15 @@ class EditProfileScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
+                          GestureDetector(
+                            onTap: () {
+                              // Navigate to the dashboard
+                              Navigator.pushReplacementNamed(context, '/participant_dashboard');
+                            },
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                            ),
                           ),
                           SizedBox(width: 10),
                           Text(
@@ -328,10 +334,14 @@ class EditProfileScreen extends StatelessWidget {
                 // Add save functionality here
                 print("Name: ${nameController.text}");
                 print("Email: ${emailController.text}");
+                Navigator.pushReplacementNamed(context, '/profile');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF3572EF), // Background color
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15), // Adjust padding as needed
+                padding: EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 15
+                ), // Adjust padding as needed
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18),
                 ),

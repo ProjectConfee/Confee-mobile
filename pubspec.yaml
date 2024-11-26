@@ -1,4 +1,4 @@
-name: youtube_1
+name: confee
 description: "A new Flutter project."
 publish_to: 'none'
 
@@ -13,16 +13,22 @@ dependencies:
   cupertino_icons: ^1.0.6
   qr_code_scanner: ^1.0.0
   flutter_pdfview: ^1.0.4
-  syncfusion_flutter_pdfviewer: ^19.2.56
  
-  
-
-
+  syncfusion_flutter_pdfviewer: ^20.2.47
+  youtube_player_flutter: ^8.0.0
+  webview_flutter: ^3.0.0
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "asset/images/logo-box.png"
 
 flutter:
   uses-material-design: true
@@ -40,4 +46,17 @@ flutter:
     - asset/images/v.png
     - asset/images/vv.png
     - asset/images/download.png
-    - asset/pdfs/aa.pdf
+    - asset/pdfs/Document 1.pdf
+    - asset/images/registerNow.png
+    - asset/images/speaker_1.jpg
+    - asset/images/speaker_2.jpg
+    - asset/images/speaker_3.jpg
+    - asset/images/libreoffice.jpg
+    - asset/images/pre2.jpeg
+    - asset/images/event_post.jpg
+    - asset/images/
+    - asset/pdfs/
+    - asset/images/gold.jpeg
+
+
+    
