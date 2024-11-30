@@ -18,8 +18,12 @@ dependencies:
   youtube_player_flutter: ^8.0.0
   webview_flutter: ^3.0.0
   url_launcher: ^6.1.10
+<<<<<<< HEAD
   http: ^0.13.3
   google_maps_flutter: ^2.2.0
+=======
+  twilio_flutter: ^0.0.9
+>>>>>>> b06a30c27bb9ba1bf7ce400747718572e8daae3b
 
 dev_dependencies:
   flutter_test:
