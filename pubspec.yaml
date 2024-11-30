@@ -18,12 +18,14 @@ dependencies:
   youtube_player_flutter: ^8.0.0
   webview_flutter: ^3.0.0
   url_launcher: ^6.1.10
-<<<<<<< HEAD
+
+
   http: ^0.13.3
   google_maps_flutter: ^2.2.0
-=======
+
   twilio_flutter: ^0.0.9
->>>>>>> b06a30c27bb9ba1bf7ce400747718572e8daae3b
+
+
 
 dev_dependencies:
   flutter_test:
@@ -39,30 +41,7 @@ flutter_launcher_icons:
 flutter:
   uses-material-design: true
   assets:
-    - asset/images/file-image-fill.png
-    - asset/images/file-video-fill.png
-    - asset/images/color-filter-fill.png
-    - asset/images/article-line.png
-    - asset/images/links-line.png
-    - asset/images/silver_badge.png
-    - asset/images/gold_badge.png
-    - asset/images/platinum_badge.png
-    - asset/images/download.png
-    - asset/images/R.png
-    - asset/images/v.png
-    - asset/images/vv.png
-    - asset/images/download.png
-    - asset/pdfs/Document 1.pdf
-    - asset/images/registerNow.png
-    - asset/images/speaker_1.jpg
-    - asset/images/speaker_2.jpg
-    - asset/images/speaker_3.jpg
-    - asset/images/libreoffice.jpg
-    - asset/images/pre2.jpeg
-    - asset/images/event_post.jpg
     - asset/images/
     - asset/pdfs/
-    - asset/images/gold.jpeg
-
 
     
