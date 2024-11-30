@@ -1,139 +1,180 @@
-// // ignore_for_file: prefer_const_constructors
+//  import 'package:flutter/material.dart';
+// import 'dart:convert'; // For JSON handling
+// import 'package:http/http.dart' as http; // For HTTP requests
 
-// import 'package:flutter/material.dart';
-// import 'package:youtube_1/pages/participant/innovation/home_page.dart'; // Import your home page file
-// import 'package:youtube_1/pages/participant/innovation/profile_view.dart'; // Import ProfileViewPage
-
-// class StallMapPage extends StatelessWidget {
+// class StallMapPage extends StatefulWidget {
 //   const StallMapPage({Key? key}) : super(key: key);
+
+//   @override
+//   _StallMapPageState createState() => _StallMapPageState();
+// }
+
+// class _StallMapPageState extends State<StallMapPage> {
+//   List<Stall> mainStalls = [];
+//   List<Stall> subStalls = [];
+//   bool isLoading = true;
+//   String baseUrl = 'http://localhost:8080/api/stall'; // Update this with your actual backend URL
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     fetchStalls();
+//   }
+
+//   // Function to fetch all stalls from the backend API
+//   Future<void> fetchStalls() async {
+//     try {
+//       final response = await http.get(Uri.parse('$baseUrl/all'));
+//       if (response.statusCode == 200) {
+//         List<dynamic> stallData = jsonDecode(response.body);
+//         setState(() {
+//           mainStalls = stallData
+//               .map((data) => Stall.fromJson(data))
+//               .where((stall) => stall.stallType == 'main')
+//               .toList();
+//           subStalls = stallData
+//               .map((data) => Stall.fromJson(data))
+//               .where((stall) => stall.stallType == 'sub')
+//               .toList();
+//           isLoading = false;
+//         });
+//       } else {
+//         throw Exception('Failed to load stalls');
+//       }
+//     } catch (error) {
+//       print(error);
+//       setState(() {
+//         isLoading = false;
+//       });
+//     }
+//   }
 
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //       appBar: AppBar(
-//         title: Text('Stall Map'),
-//         backgroundColor: Colors.blue[800], // Set the app bar color
+//         title: Text('Stall Map', style: TextStyle(color: Colors.white)),
+//         backgroundColor: Color(0xFF050C9B),
 //         leading: IconButton(
-//           icon: Icon(Icons.arrow_back),
+//           icon: Icon(Icons.arrow_back, color: Colors.white),
 //           onPressed: () {
-//             Navigator.pop(context); // Navigate back when arrow back is pressed
+//             Navigator.pop(context);
 //           },
 //         ),
 //       ),
-//       body: SingleChildScrollView(
-//         child: Column(
-//           children: [
-//             SizedBox(height: 20),
-//             Text(
-//               'Floor 1',
-//               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//       body: isLoading
+//           ? Center(child: CircularProgressIndicator()) // Loading indicator
+//           : SingleChildScrollView(
+//               child: Column(
+//                 children: [
+//                   SizedBox(height: 20),
+//                   Text(
+//                     'Main Stalls',
+//                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//                   ),
+//                   SizedBox(height: 20),
+//                   _buildStallSection(mainStalls),
+//                   SizedBox(height: 40),
+//                   Text(
+//                     'Sub Stalls',
+//                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//                   ),
+//                   SizedBox(height: 20),
+//                   _buildStallSection(subStalls),
+//                   SizedBox(height: 40),
+//                 ],
+//               ),
 //             ),
-//             SizedBox(height: 20),
-//             _buildFloorPlan(1),
-//             SizedBox(height: 40),
-//             Text(
-//               'Floor 2',
-//               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-//             ),
-//             SizedBox(height: 20),
-//             _buildFloorPlan(2),
-//             SizedBox(height: 40),
-//             Text(
-//               'Shop Names',
-//               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-//             ),
-//             SizedBox(height: 20),
-//             _buildShopNames(),
-//           ],
-//         ),
-//       ),
-//       bottomNavigationBar: BottomNavigationBar(
-//         items: [
-//           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-//           BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: 'Packages'),
-//           BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: 'Profile'),
-//         ],
-//         onTap: (index) {
-//           switch (index) {
-//             case 0:
-//               // Navigate to the HomePage when the home icon is tapped
-//               Navigator.pushAndRemoveUntil(
-//                 context,
-//                 MaterialPageRoute(builder: (context) => HomePage()),
-//                 (Route<dynamic> route) => false,
-//               );
-//               break;
-//             case 2:
-//               // Navigate to the ProfileViewPage when the profile icon is tapped
-//               Navigator.push(
-//                 context,
-//                 MaterialPageRoute(builder: (context) => ProfileViewPage()),
-//               );
-//               break;
-//           }
-//         },
-//       ),
 //     );
 //   }
 
-//   Widget _buildFloorPlan(int floor) {
+//   Widget _buildStallSection(List<Stall> stalls) {
 //     List<Widget> rows = [];
-//     int shopNumber = (floor - 1) * 13 + 1;
-//     for (int i = 0; i < 4; i++) {
-//       List<Widget> rowShops = [];
+//     int stallNumber = 1;
+//     for (int i = 0; i < (stalls.length / 3).ceil(); i++) {
+//       List<Widget> rowStalls = [];
 //       for (int j = 0; j < 3; j++) {
-//         if (shopNumber <= floor * 13) {
-//           rowShops.add(_buildShopBox(shopNumber++));
+//         if (stallNumber <= stalls.length) {
+//           rowStalls.add(_buildShopBox(stalls[stallNumber - 1]));
 //         } else {
-//           rowShops.add(Expanded(child: Container()));
+//           rowStalls.add(Expanded(child: Container()));
 //         }
+//         stallNumber++;
 //       }
 //       rows.add(Row(
 //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//         children: rowShops,
+//         children: rowStalls,
 //       ));
 //       rows.add(SizedBox(height: 10));
 //     }
 //     return Column(children: rows);
 //   }
 
-//   Widget _buildShopBox(int number) {
+//   Widget _buildShopBox(Stall stall) {
 //     return Expanded(
 //       child: Container(
-//         height: 60,
+//         height: 120,
 //         margin: EdgeInsets.symmetric(horizontal: 5),
 //         decoration: BoxDecoration(
 //           border: Border.all(color: Colors.blue, width: 2),
 //           borderRadius: BorderRadius.circular(8),
+//           color: Colors.white,
 //         ),
 //         child: Center(
-//           child: Text(
-//             'Shop $number',
-//             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+//           child: Padding(
+//             padding: const EdgeInsets.all(8.0),
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               crossAxisAlignment: CrossAxisAlignment.center,
+//               children: [
+//                 Text(
+//                   '${stall.stallName}', // Display the stall name
+//                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+//                 ),
+//                 SizedBox(height: 4),
+//                 Text(
+//                   'Sponsor ID: ${stall.sponsorId}', // Display the sponsor ID
+//                   style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+//                 ),
+//               ],
+//             ),
 //           ),
 //         ),
 //       ),
 //     );
 //   }
+// }
 
-//   Widget _buildShopNames() {
-//     List<Widget> shopNames = [];
-//     for (int i = 1; i <= 25; i++) {
-//       shopNames.add(Text('Shop $i: Name of Shop $i'));
-//     }
-//     return Column(
-//       crossAxisAlignment: CrossAxisAlignment.start,
-//       children: shopNames,
+// // Stall class to parse data from backend
+// class Stall {
+//   final String stallId;
+//   final String stallType;
+//   final String stallNumber;
+//   final String stallName;
+//   final String sponsorId; // Added sponsorId field
+
+//   Stall({
+//     required this.stallId,
+//     required this.stallType,
+//     required this.stallNumber,
+//     required this.stallName,
+//     required this.sponsorId, // Initialize sponsorId
+//   });
+
+//   // Factory constructor to create Stall object from JSON
+//   factory Stall.fromJson(Map<String, dynamic> json) {
+//     return Stall(
+//       stallId: json['stallId'].toString(),
+//       stallType: json['stallType'],
+//       stallNumber: json['stallNumber'],
+//       stallName: '${json['stallType']} ${json['stallNumber']}',
+//       sponsorId: json['sponsorId'], // Parse sponsorId
 //     );
 //   }
 // }
-
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'home_page.dart'; // Import your home page file
-import 'profile_view.dart'; // Import ProfileViewPage
-import 'custom_bottom_navigation_bar.dart'; // Import the CustomBottomNavigationBar
+import 'dart:convert'; // For JSON handling
+import 'package:http/http.dart' as http; // For HTTP requests
 
 class StallMapPage extends StatefulWidget {
   const StallMapPage({Key? key}) : super(key: key);
@@ -143,30 +184,42 @@ class StallMapPage extends StatefulWidget {
 }
 
 class _StallMapPageState extends State<StallMapPage> {
- // int _currentIndex = 1; // Default to Packages tab
+  List<Stall> mainStalls = [];
+  List<Stall> subStalls = [];
+  bool isLoading = true;
+  String baseUrl = 'http://localhost:8080/api/stall'; // Update this with your actual backend URL
 
-  void _onTap(int index) {
-    setState(() {
-      //_currentIndex = index;
-    });
+  @override
+  void initState() {
+    super.initState();
+    fetchStalls();
+  }
 
-    switch (index) {
-      case 0:
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => HomePage_Sponser()),
-          (Route<dynamic> route) => false,
-        );
-        break;
-      case 1:
-        // Stay on the current page
-        break;
-      case 2:
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => ProfileViewPage()),
-        );
-        break;
+  // Function to fetch all stalls from the backend API
+  Future<void> fetchStalls() async {
+    try {
+      final response = await http.get(Uri.parse('$baseUrl/all'));
+      if (response.statusCode == 200) {
+        List<dynamic> stallData = jsonDecode(response.body);
+        setState(() {
+          mainStalls = stallData
+              .map((data) => Stall.fromJson(data))
+              .where((stall) => stall.stallType == 'main')
+              .toList();
+          subStalls = stallData
+              .map((data) => Stall.fromJson(data))
+              .where((stall) => stall.stallType == 'sub')
+              .toList();
+          isLoading = false;
+        });
+      } else {
+        throw Exception('Failed to load stalls');
+      }
+    } catch (error) {
+      print(error);
+      setState(() {
+        isLoading = false;
+      });
     }
   }
 
@@ -174,97 +227,142 @@ class _StallMapPageState extends State<StallMapPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stall Map',style: TextStyle(color: Colors.white)),
-        backgroundColor: Color(0xFF050C9B), // Set the app bar color
+        title: Text('Stall Map', style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF050C9B),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back,color: Colors.white,),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pop(context); // Navigate back when arrow back is pressed
+            Navigator.pop(context);
           },
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 20),
-            Text(
-              'Floor 1(Open Area)',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      body: isLoading
+          ? Center(child: CircularProgressIndicator()) // Loading indicator
+          : SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildSectionTitle('Main Stalls'),
+                  _buildStallSection(mainStalls),
+                  SizedBox(height: 20),
+                  _buildSectionTitle('Sub Stalls'),
+                  _buildStallSection(subStalls),
+                  SizedBox(height: 40),
+                ],
+              ),
             ),
-            SizedBox(height: 20),
-            _buildFloorPlan(1),
-            SizedBox(height: 40),
-            Text(
-              'Floor 2(W001)',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 20),
-            _buildFloorPlan(2),
-            SizedBox(height: 40),
-            // Text(
-            //   'Stall Names',
-            //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            // ),
-            SizedBox(height: 20),
-            _buildShopNames(),
-          ],
-        ),
-      ),
-      bottomNavigationBar: HomeBottomBar(
-        //currentIndex: _currentIndex,
-        //onTap: _onTap,
+    );
+  }
+
+  Widget _buildSectionTitle(String title) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      child: Text(
+        title,
+        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Color(0xFF050C9B)),
       ),
     );
   }
 
-  Widget _buildFloorPlan(int floor) {
+  Widget _buildStallSection(List<Stall> stalls) {
     List<Widget> rows = [];
-    int shopNumber = (floor - 1) * 6 + 1;
-    for (int i = 0; i < 2; i++) {
-      List<Widget> rowShops = [];
+    int stallNumber = 1;
+    for (int i = 0; i < (stalls.length / 3).ceil(); i++) {
+      List<Widget> rowStalls = [];
       for (int j = 0; j < 3; j++) {
-        if (shopNumber <= floor * 13) {
-          rowShops.add(_buildShopBox(shopNumber++));
+        if (stallNumber <= stalls.length) {
+          rowStalls.add(_buildShopBox(stalls[stallNumber - 1]));
         } else {
-          rowShops.add(Expanded(child: Container()));
+          rowStalls.add(Expanded(child: Container()));
         }
+        stallNumber++;
       }
       rows.add(Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: rowShops,
+        children: rowStalls,
       ));
       rows.add(SizedBox(height: 10));
     }
     return Column(children: rows);
   }
 
-  Widget _buildShopBox(int number) {
+  Widget _buildShopBox(Stall stall) {
     return Expanded(
       child: Container(
-        height: 60,
-        margin: EdgeInsets.symmetric(horizontal: 5),
+        height: 120,
+        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.blue, width: 2),
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(15),
+          gradient: LinearGradient(
+            colors: [Colors.blue.shade100, Colors.white],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 8,
+              offset: Offset(0, 4),
+            ),
+          ],
         ),
         child: Center(
-          child: Text(
-            'Company $number',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  '${stall.stallName}', // Display the stall name
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF050C9B),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Sponsor ID: ${stall.sponsorId}', // Display the sponsor ID
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey[700],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
+}
 
-  Widget _buildShopNames() {
-    List<Widget> shopNames = [];
-    for (int i = 1; i <= 12; i++) {
-      //shopNames.add(Text('Stall $i: Name of Shop $i'));
-    }
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: shopNames,
+// Stall class to parse data from backend
+class Stall {
+  final String stallId;
+  final String stallType;
+  final String stallNumber;
+  final String stallName;
+  final String sponsorId; // Added sponsorId field
+
+  Stall({
+    required this.stallId,
+    required this.stallType,
+    required this.stallNumber,
+    required this.stallName,
+    required this.sponsorId, // Initialize sponsorId
+  });
+
+  // Factory constructor to create Stall object from JSON
+  factory Stall.fromJson(Map<String, dynamic> json) {
+    return Stall(
+      stallId: json['stallId'].toString(),
+      stallType: json['stallType'],
+      stallNumber: json['stallNumber'],
+      stallName: '${json['stallType']} ${json['stallNumber']}',
+      sponsorId: json['sponsorId'], // Parse sponsorId
     );
   }
 }
