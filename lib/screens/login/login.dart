@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http; // Add http package
+import 'dart:convert'; // For converting JSON data
 import '../../utils/size_config.dart';
 
 class LoginAndForgotPassword extends StatefulWidget {
@@ -8,6 +10,9 @@ class LoginAndForgotPassword extends StatefulWidget {
 
 class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
   bool _showForgotPassword = false;
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -102,17 +107,16 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         TextFormField(
+          controller: _emailController,
           decoration: InputDecoration(
             hintText: "Username",
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(18),
-               borderSide: BorderSide.none,
+              borderSide: BorderSide.none,
             ),
             fillColor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             filled: true,
-            prefixIcon: Icon(
-                Icons.person
-            ),
+            prefixIcon: Icon(Icons.person),
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
@@ -123,6 +127,7 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
         ),
         SizedBox(height: SizeConfig.heightMultiplier * 2), // Updated size
         TextFormField(
+          controller: _passwordController,
           decoration: InputDecoration(
             hintText: "Password",
             border: OutlineInputBorder(
@@ -177,12 +182,7 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
         horizontal: SizeConfig.blockSizeHorizontal * 20, // Updated padding
       ),
       child: ElevatedButton(
-        onPressed: () {
-          Navigator.pushReplacementNamed(
-            context,
-            '/participant_dashboard',
-          );
-        },
+        onPressed: _login,
         child: Text(
           "Login",
           style: TextStyle(
@@ -243,8 +243,58 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
           _showForgotPassword = true;
         });
       },
-      child: Text(
-          "Forgot password?"
+      child: Text("Forgot password?"),
+    );
+  }
+
+  // New method for logging in and calling the backend
+  Future<void> _login() async {
+    if (_formKey.currentState?.validate() ?? false) {
+      final email = _emailController.text.trim();
+      final password = _passwordController.text.trim();
+
+      try {
+        // Make the POST request
+        final response = await http.post(
+          Uri.parse('http://localhost:8080/auth/login'),
+          body: json.encode({
+            'email': email,
+            'password': password,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        );
+
+        if (response.statusCode == 200) {
+          // Navigate to the dashboard or show success message
+          Navigator.pushReplacementNamed(context, '/participant_dashboard');
+        } else {
+          // Handle error response
+          _showErrorDialog('Invalid credentials');
+        }
+      } catch (error) {
+        // Handle network error
+        _showErrorDialog('An error occurred. Please try again later.');
+      }
+    }
+  }
+
+  // Method to show error dialog
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Error'),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Text('OK'),
+          ),
+        ],
       ),
     );
   }
