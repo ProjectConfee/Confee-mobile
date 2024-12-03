@@ -11,9 +11,14 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
-  qr_code_scanner: ^1.0.0
+  qr_code_scanner: ^1.0.1
   flutter_pdfview: ^1.0.4
- 
+  flutter_secure_storage: ^8.0.0
+  shared_preferences: ^2.1.0
+  dart_jsonwebtoken: ^2.0.1
+  jwt_decoder: ^2.0.1
+
+
   syncfusion_flutter_pdfviewer: ^20.2.47
   youtube_player_flutter: ^8.0.0
   webview_flutter: ^3.0.0
