@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:confee/services/announcement_service.dart'; 
+import 'package:confee/services/announcement_service.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);
@@ -16,7 +16,21 @@ class _NotificationPageState extends State<NotificationPage> {
   @override
   void initState() {
     super.initState();
-    _announcements = _announcementService.fetchAnnouncements();
+    _announcements = _fetchAndSortAnnouncements();
+  }
+
+  Future<List<Announcement>> _fetchAndSortAnnouncements() async {
+    // Fetch the announcements from the backend
+    List<Announcement> announcements = await _announcementService.fetchAnnouncements();
+
+    // Sort by timestamp in descending order (newest first)
+    announcements.sort((a, b) {
+      DateTime dateA = DateTime.parse(a.timestamp);
+      DateTime dateB = DateTime.parse(b.timestamp);
+      return dateB.compareTo(dateA); // Descending order
+    });
+
+    return announcements;
   }
 
   @override
