@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http; // Add http package
-import 'dart:convert'; // For converting JSON data
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../utils/constants.dart';
 import '../../utils/size_config.dart';
 
 class LoginAndForgotPassword extends StatefulWidget {
@@ -13,11 +15,11 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _forgotEmailController = TextEditingController();
-  final _formKey = GlobalKey<FormState>(); // Form key for validation
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context); // Initialize SizeConfig
+    SizeConfig().init(context);
 
     return SafeArea(
       child: Scaffold(
@@ -25,17 +27,16 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
           child: Container(
             margin: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 6),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(height: SizeConfig.heightMultiplier * 3),
                 _showForgotPassword ? _forgotPasswordHeader() : _loginHeader(),
                 SizedBox(height: SizeConfig.heightMultiplier * 2),
-                _showForgotPassword
-                    ? _image('asset/images/password.png')
-                    : _image('asset/images/login.png'),
+                _image(_showForgotPassword
+                    ? 'asset/images/password.png'
+                    : 'asset/images/login.png'),
                 SizedBox(height: SizeConfig.heightMultiplier * 2),
                 _showForgotPassword
-                    ? _forgotPasswordInputFields()
+                    ? _forgotPasswordInputField()
                     : _loginInputFields(),
                 SizedBox(height: SizeConfig.heightMultiplier * 4),
                 _showForgotPassword
@@ -102,7 +103,6 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
     return Form(
       key: _formKey,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TextFormField(
             controller: _emailController,
@@ -110,9 +110,7 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
               hintText: "Username",
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
-                borderSide: BorderSide.none,
               ),
-              fillColor: Colors.grey[200],
               filled: true,
               prefixIcon: Icon(Icons.person),
             ),
@@ -130,9 +128,7 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
               hintText: "Password",
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
-                borderSide: BorderSide.none,
               ),
-              fillColor: Colors.grey[200],
               filled: true,
               prefixIcon: Icon(Icons.lock),
             ),
@@ -149,16 +145,14 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
     );
   }
 
-  Widget _forgotPasswordInputFields() {
+  Widget _forgotPasswordInputField() {
     return TextFormField(
       controller: _forgotEmailController,
       decoration: InputDecoration(
         hintText: "Enter your email",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(18),
-          borderSide: BorderSide.none,
         ),
-        fillColor: Colors.grey[200],
         filled: true,
         prefixIcon: Icon(Icons.email),
       ),
@@ -174,19 +168,9 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
   Widget _loginButton() {
     return ElevatedButton(
       onPressed: _login,
-      child: Text(
-        "Login",
-        style: TextStyle(
-          fontSize: SizeConfig.textMultiplier * 2,
-          color: Colors.white,
-        ),
-      ),
+      child: Text("Login"),
       style: ElevatedButton.styleFrom(
         backgroundColor: Color(0xFF3572EF),
-        padding: EdgeInsets.symmetric(
-          horizontal: SizeConfig.blockSizeHorizontal * 12,
-          vertical: SizeConfig.heightMultiplier * 1.5,
-        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18),
         ),
@@ -197,19 +181,9 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
   Widget _forgotPasswordButton() {
     return ElevatedButton(
       onPressed: _requestPasswordReset,
-      child: Text(
-        "Next",
-        style: TextStyle(
-          fontSize: SizeConfig.textMultiplier * 2,
-          color: Colors.white,
-        ),
-      ),
+      child: Text("Next"),
       style: ElevatedButton.styleFrom(
         backgroundColor: Color(0xFF3572EF),
-        padding: EdgeInsets.symmetric(
-          horizontal: SizeConfig.blockSizeHorizontal * 5,
-          vertical: SizeConfig.heightMultiplier * 1.5,
-        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18),
         ),
@@ -219,11 +193,9 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
 
   Widget _forgotPasswordLink() {
     return TextButton(
-      onPressed: () {
-        setState(() {
-          _showForgotPassword = true;
-        });
-      },
+      onPressed: () => setState(() {
+        _showForgotPassword = true;
+      }),
       child: Text("Forgot password?"),
     );
   }
@@ -235,15 +207,26 @@ class _LoginAndForgotPasswordState extends State<LoginAndForgotPassword> {
 
       try {
         final response = await http.post(
-          Uri.parse('http://192.168.56.1:8080/auth/login'),
+          Uri.parse('${ApiConstants.baseUrl}/auth/login'),
           body: json.encode({'email': email, 'password': password}),
           headers: {'Content-Type': 'application/json'},
         );
-        final Map<String, dynamic> responseBody = json.decode(response.body);
-        if (response.statusCode == 200 && responseBody['statusCode'] == 200) {
-          Navigator.pushReplacementNamed(context, '/participant_dashboard');
+
+        if (response.statusCode == 200) {
+          final responseBody = json.decode(response.body);
+          final token = responseBody['token'];
+
+          final prefs = await SharedPreferences.getInstance();
+          prefs.setString('auth_token', token);
+          print(responseBody['role']);
+          if (responseBody['role']=="COMMITTEE" || responseBody['role']=="ADMIN" )
+            Navigator.pushReplacementNamed(context, '/oc_dashboard');
+          else{
+
+            Navigator.pushReplacementNamed(context, '/participant_dashboard');
+          }
         } else {
-          _showErrorDialog('Login failed. check credentials.');
+          _showErrorDialog('Invalid credentials.');
         }
       } catch (error) {
         _showErrorDialog('Network error. Please try again.');
